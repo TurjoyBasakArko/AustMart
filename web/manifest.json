@@ -1,6 +1,6 @@
 {
-    "name": "emart_app",
-    "short_name": "emart_app",
+    "name": "austmart",
+    "short_name": "austmart",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

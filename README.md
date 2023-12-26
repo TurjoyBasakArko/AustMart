@@ -1,4 +1,4 @@
-# emart_app
+# austmart
 
 A new Flutter project.
 
