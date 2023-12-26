@@ -39,7 +39,14 @@ const     notes="Notes";
 const     stationary="Stationary";
 const     semesterQues="Previous Question Papers";
 
+const womenDress = "Women Dress";
+const girlsWatches = "Girls Watches";
+const mobilePhone = "Mobile Phone";
+const boysGlasses = "Boys Glasses";
+const tShirts = "T-Shirts";
+const girlsDress = "Girls Dress";
 
+const featureProduct = "Featured Product";
 
 
 
