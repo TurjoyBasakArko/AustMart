@@ -9,6 +9,7 @@ import 'package:austmart/widgets_common/bg_widget.dart';
 import 'package:austmart/widgets_common/custom_textfield.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
+
 class CatagoryDetails extends StatelessWidget {
   final String? title;
   const CatagoryDetails({Key?key, this.title}):super(key:key);
