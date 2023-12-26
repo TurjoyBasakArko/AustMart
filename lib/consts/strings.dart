@@ -31,6 +31,16 @@ const topCategories="top catagories";
 const brand="brand";
 const wishlist="My Wishlists", orders="My Orders",messages= "Messeges";
 
+//catagory strings
+const books= "Books";
+const    labMaterials="Lab Materials";
+const     EngrDrawingMaterials="Engineering Drawing Materials";
+const     notes="Notes";
+const     stationary="Stationary";
+const     semesterQues="Previous Question Papers";
+
+
+
 
 
 
