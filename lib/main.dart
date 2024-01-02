@@ -1,5 +1,8 @@
 import 'package:austmart/SplashScreen/splash_screen.dart';
+<<<<<<< HEAD
 import 'package:firebase_core/firebase_core.dart';
+=======
+>>>>>>> ce882405e26fda9312b11f799089aeb01d9d694f
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'consts/consts.dart';
@@ -26,7 +29,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+<<<<<<< HEAD
       debugShowCheckedModeBanner: false,
+=======
+>>>>>>> ce882405e26fda9312b11f799089aeb01d9d694f
       title: appname,
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.transparent,

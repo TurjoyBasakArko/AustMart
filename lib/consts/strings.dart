@@ -30,7 +30,10 @@ const featurecatagories="Faetured Catagories";
 const topCategories="top catagories";
 const brand="brand";
 const wishlist="My Wishlists", orders="My Orders",messages= "Messeges";
+<<<<<<< HEAD
 const loggedin="logged in Successfull";
+=======
+>>>>>>> ce882405e26fda9312b11f799089aeb01d9d694f
 
 //catagory strings
 const books= "Books";
@@ -47,7 +50,11 @@ const boysGlasses = "Boys Glasses";
 const tShirts = "T-Shirts";
 const girlsDress = "Girls Dress";
 
+<<<<<<< HEAD
 const  featureProduct= "Featured Product";
+=======
+const featureProduct = "Featured Product";
+>>>>>>> ce882405e26fda9312b11f799089aeb01d9d694f
 
 
 

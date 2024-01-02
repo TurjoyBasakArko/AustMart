@@ -1,6 +1,9 @@
 import 'package:austmart/consts/list.dart';
+<<<<<<< HEAD
 import 'package:austmart/home_controller/auth_controller.dart';
 import 'package:austmart/home_screen/home.dart';
+=======
+>>>>>>> ce882405e26fda9312b11f799089aeb01d9d694f
 import 'package:austmart/widgets_common/button.dart';
 import 'package:flutter/material.dart';
 import 'package:austmart/consts/consts.dart';
@@ -15,6 +18,7 @@ class SignUp extends StatefulWidget {
   @override
   State<SignUp> createState() => _SignUpScreenState();
 }
+<<<<<<< HEAD
 
 class _SignUpScreenState extends State<SignUp> {
   bool? isCheck = false;
@@ -25,6 +29,11 @@ class _SignUpScreenState extends State<SignUp> {
   var passwordRetypeController = TextEditingController();
 
   @override
+=======
+  class _SignUpScreenState extends State<SignUp>{
+     bool?isCheck=false;
+     @override
+>>>>>>> ce882405e26fda9312b11f799089aeb01d9d694f
   Widget build(BuildContext context) {
     return bgWidget(
       child: Scaffold(
@@ -43,6 +52,7 @@ class _SignUpScreenState extends State<SignUp> {
               SizedBox(height: 15),
               Column(
                 children: [
+<<<<<<< HEAD
                   customTextField(
                     title: name,
                     hint: nameHint,
@@ -73,11 +83,30 @@ class _SignUpScreenState extends State<SignUp> {
                       children: [
                         Checkbox(
                           activeColor: redColor,
+=======
+                  customTextField(name, nameHint),
+                  customTextField(email, emailHint),
+                  customTextField(password, passwordHint),
+                  customTextField(retypePassword, passwordHint),
+                  Align(
+                    alignment: Alignment.centerRight,
+                    child:
+
+
+                    Row(
+                      children: [
+                        Checkbox(
+                          activeColor:redColor ,
+>>>>>>> ce882405e26fda9312b11f799089aeb01d9d694f
                           checkColor: whiteColor,
                           value: isCheck,
                           onChanged: (newValue) {
                             setState(() {
+<<<<<<< HEAD
                               isCheck = newValue;
+=======
+                              isCheck=newValue;
+>>>>>>> ce882405e26fda9312b11f799089aeb01d9d694f
                             });
                           },
                         ),
@@ -117,12 +146,17 @@ class _SignUpScreenState extends State<SignUp> {
                               ],
                             ),
                           ),
+<<<<<<< HEAD
                         ),
+=======
+                        )
+>>>>>>> ce882405e26fda9312b11f799089aeb01d9d694f
                       ],
                     ),
                   ),
                   SizedBox(width: 5),
                   CustomButton(
+<<<<<<< HEAD
 
                     color: isCheck == true ? redColor : lightGrey,
                     textcolor: whiteColor,
@@ -150,6 +184,12 @@ class _SignUpScreenState extends State<SignUp> {
                         VxToast.show(context, msg: e.toString());
                       }
                     },
+=======
+                    onPress: () {},
+                    color: isCheck==true?redColor:lightGrey,
+                    textcolor: whiteColor,
+                    title: signUp,
+>>>>>>> ce882405e26fda9312b11f799089aeb01d9d694f
                   ).box.width(context.screenWidth - 50).make(),
                   SizedBox(height: 10),
                   RichText(
@@ -188,4 +228,9 @@ class _SignUpScreenState extends State<SignUp> {
       ),
     );
   }
+<<<<<<< HEAD
 }
+=======
+
+}
+>>>>>>> ce882405e26fda9312b11f799089aeb01d9d694f

@@ -3,17 +3,29 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
+<<<<<<< HEAD
 	<string>AIzaSyBKh-QcXXIa1LyBO2VgGuWMmjzwzXBa7eE</string>
 	<key>GCM_SENDER_ID</key>
 	<string>55609591312</string>
+=======
+	<string>AIzaSyCJjHX9m6R1yk5lz132UbJa9M1H77zUzJs</string>
+	<key>GCM_SENDER_ID</key>
+	<string>298399611911</string>
+>>>>>>> ce882405e26fda9312b11f799089aeb01d9d694f
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.example.austmart</string>
 	<key>PROJECT_ID</key>
+<<<<<<< HEAD
 	<string>austmart-c9662</string>
 	<key>STORAGE_BUCKET</key>
 	<string>austmart-c9662.appspot.com</string>
+=======
+	<string>austmart-177a4</string>
+	<key>STORAGE_BUCKET</key>
+	<string>austmart-177a4.appspot.com</string>
+>>>>>>> ce882405e26fda9312b11f799089aeb01d9d694f
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,6 +37,10 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
+<<<<<<< HEAD
 	<string>1:55609591312:ios:a2ee01917c38f6dec56c95</string>
+=======
+	<string>1:298399611911:ios:93e82e92bfc16c24e3bea2</string>
+>>>>>>> ce882405e26fda9312b11f799089aeb01d9d694f
 </dict>
 </plist>
