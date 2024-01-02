@@ -30,6 +30,7 @@ const featurecatagories="Faetured Catagories";
 const topCategories="top catagories";
 const brand="brand";
 const wishlist="My Wishlists", orders="My Orders",messages= "Messeges";
+const loggedin="logged in Successfull";
 
 //catagory strings
 const books= "Books";
@@ -39,7 +40,14 @@ const     notes="Notes";
 const     stationary="Stationary";
 const     semesterQues="Previous Question Papers";
 
+const womenDress = "Women Dress";
+const girlsWatches = "Girls Watches";
+const mobilePhone = "Mobile Phone";
+const boysGlasses = "Boys Glasses";
+const tShirts = "T-Shirts";
+const girlsDress = "Girls Dress";
 
+const  featureProduct= "Featured Product";
 
 
 

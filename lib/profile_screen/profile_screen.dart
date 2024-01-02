@@ -1,4 +1,6 @@
+import 'package:austmart/auth_screen/login_screen.dart';
 import 'package:austmart/consts/list.dart';
+import 'package:austmart/home_controller/auth_controller.dart';
 import 'package:austmart/home_controller/home_controller.dart';
 import 'package:austmart/profile_screen/components/details_button.dart';
 import 'package:flutter/material.dart';
@@ -46,7 +48,10 @@ class ProfileScreen extends StatelessWidget
                       style: OutlinedButton.styleFrom(
                         side: const BorderSide(color: whiteColor)
                       ),
-                        onPressed: () {},
+                        onPressed: () async{
+                        await Get.put(AuthController()).signoutMethod(context:context);
+                        Get.offAll(()=>const LoginScreen());
+                        },
                         child: 'Logout'.text.fontFamily(semibold).white.make(),
                     )
                     ],

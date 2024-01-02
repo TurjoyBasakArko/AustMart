@@ -1,5 +1,6 @@
 import 'package:austmart/auth_screen/SignUp.dart';
 import 'package:austmart/consts/list.dart';
+import 'package:austmart/home_controller/auth_controller.dart';
 import 'package:austmart/home_screen/home.dart';
 import 'package:austmart/home_screen/home_screen.dart';
 import 'package:austmart/widgets_common/button.dart';
@@ -15,6 +16,7 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var controller=Get.put(AuthController());
     return bgWidget(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
@@ -32,14 +34,21 @@ class LoginScreen extends StatelessWidget {
               SizedBox(height: 15),
               Column(
                 children: [
-                  customTextField(email, emailHint),
-                  customTextField(password, passwordHint),
+                  customTextField(hint: emailHint,title:email,isPass: false,controller:controller.emailController),
+                  customTextField(hint: passwordHint,title:password,isPass: true,controller: controller.passwordController),
                   Align(
                     alignment: Alignment.centerRight,
 
                         child:
                             TextButton(
-                              onPressed: () {},
+                              onPressed: () async{
+                                await controller.loginMethod(context: context).then((value){
+                                  if(value!=null)
+                                    {
+                                      VxToast.show(context, msg: loggedin);
+                                    }
+                                });
+                              },
                               child: forgetPass.text.make(),
                             )),
                             5.heightBox,

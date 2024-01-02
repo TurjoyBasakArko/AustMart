@@ -1,4 +1,6 @@
 import 'package:austmart/consts/list.dart';
+import 'package:austmart/home_controller/auth_controller.dart';
+import 'package:austmart/home_screen/home.dart';
 import 'package:austmart/widgets_common/button.dart';
 import 'package:flutter/material.dart';
 import 'package:austmart/consts/consts.dart';
@@ -13,9 +15,16 @@ class SignUp extends StatefulWidget {
   @override
   State<SignUp> createState() => _SignUpScreenState();
 }
-  class _SignUpScreenState extends State<SignUp>{
-     bool?isCheck=false;
-     @override
+
+class _SignUpScreenState extends State<SignUp> {
+  bool? isCheck = false;
+  var controller = Get.put(AuthController());
+  var nameController = TextEditingController();
+  var emailController = TextEditingController();
+  var passwordController = TextEditingController();
+  var passwordRetypeController = TextEditingController();
+
+  @override
   Widget build(BuildContext context) {
     return bgWidget(
       child: Scaffold(
@@ -34,24 +43,41 @@ class SignUp extends StatefulWidget {
               SizedBox(height: 15),
               Column(
                 children: [
-                  customTextField(name, nameHint),
-                  customTextField(email, emailHint),
-                  customTextField(password, passwordHint),
-                  customTextField(retypePassword, passwordHint),
+                  customTextField(
+                    title: name,
+                    hint: nameHint,
+                    controller: nameController,
+                    isPass: false,
+                  ),
+                  customTextField(
+                    title: email,
+                    hint: emailHint,
+                    controller: emailController,
+                    isPass: false,
+                  ),
+                  customTextField(
+                    title: password,
+                    hint: passwordHint,
+                    controller: passwordController,
+                    isPass: true,
+                  ),
+                  customTextField(
+                    title: retypePassword,
+                    hint: retypePassword,
+                    controller: passwordRetypeController,
+                    isPass: true,
+                  ),
                   Align(
                     alignment: Alignment.centerRight,
-                    child:
-
-
-                    Row(
+                    child: Row(
                       children: [
                         Checkbox(
-                          activeColor:redColor ,
+                          activeColor: redColor,
                           checkColor: whiteColor,
                           value: isCheck,
                           onChanged: (newValue) {
                             setState(() {
-                              isCheck=newValue;
+                              isCheck = newValue;
                             });
                           },
                         ),
@@ -91,16 +117,39 @@ class SignUp extends StatefulWidget {
                               ],
                             ),
                           ),
-                        )
+                        ),
                       ],
                     ),
                   ),
                   SizedBox(width: 5),
                   CustomButton(
-                    onPress: () {},
-                    color: isCheck==true?redColor:lightGrey,
+
+                    color: isCheck == true ? redColor : lightGrey,
                     textcolor: whiteColor,
                     title: signUp,
+                    onPress: () async {
+                      try {
+                        await controller
+                            .signUpmethod(
+                          context: context,
+                          email: emailController.text,
+                          password: passwordController.text,
+                        )
+                            .then((value) {
+                          return controller.storeUserData(
+                            name: nameController.text,
+                            email: emailController.text,
+                            password: passwordController.text,
+
+                          );
+                        }).then((value) {
+                          VxToast.show(context, msg: loggedin);
+                          Get.offAll(() => Home());
+                        });
+                      } catch (e) {
+                        VxToast.show(context, msg: e.toString());
+                      }
+                    },
                   ).box.width(context.screenWidth - 50).make(),
                   SizedBox(height: 10),
                   RichText(
@@ -139,5 +188,4 @@ class SignUp extends StatefulWidget {
       ),
     );
   }
-
 }
