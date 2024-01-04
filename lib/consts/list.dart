@@ -26,7 +26,7 @@ const featuredImages1 = [imgS1, imgS2, imgS3];
 const featuredImages2 = [imgS4, imgS5, imgS6];
 
 const featuredTitles1 = [womenDress, girlsDress, girlsWatches];
-<<<<<<< HEAD
+
 const featuredTitles2 = [boysGlasses, mobilePhone, tShirts];
 const imgfeatureproduct=[
   imgP1,
@@ -37,6 +37,4 @@ const imgfeatureproduct=[
   imgP6,
   imgP7,
 ];
-=======
-const featuredTitles2 = [boysGlasses, mobilePhone, tShirts];
->>>>>>> ce882405e26fda9312b11f799089aeb01d9d694f
+

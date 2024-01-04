@@ -1,9 +1,8 @@
 import 'package:austmart/auth_screen/SignUp.dart';
 import 'package:austmart/consts/list.dart';
-<<<<<<< HEAD
+
 import 'package:austmart/home_controller/auth_controller.dart';
-=======
->>>>>>> ce882405e26fda9312b11f799089aeb01d9d694f
+
 import 'package:austmart/home_screen/home.dart';
 import 'package:austmart/home_screen/home_screen.dart';
 import 'package:austmart/widgets_common/button.dart';
@@ -19,10 +18,9 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
+
     var controller=Get.put(AuthController());
-=======
->>>>>>> ce882405e26fda9312b11f799089aeb01d9d694f
+
     return bgWidget(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
@@ -40,19 +38,16 @@ class LoginScreen extends StatelessWidget {
               SizedBox(height: 15),
               Column(
                 children: [
-<<<<<<< HEAD
+
                   customTextField(hint: emailHint,title:email,isPass: false,controller:controller.emailController),
                   customTextField(hint: passwordHint,title:password,isPass: true,controller: controller.passwordController),
-=======
-                  customTextField(email, emailHint),
-                  customTextField(password, passwordHint),
->>>>>>> ce882405e26fda9312b11f799089aeb01d9d694f
+
                   Align(
                     alignment: Alignment.centerRight,
 
                         child:
                             TextButton(
-<<<<<<< HEAD
+
                               onPressed: () async{
                                 await controller.loginMethod(context: context).then((value){
                                   if(value!=null)
@@ -61,9 +56,7 @@ class LoginScreen extends StatelessWidget {
                                     }
                                 });
                               },
-=======
-                              onPressed: () {},
->>>>>>> ce882405e26fda9312b11f799089aeb01d9d694f
+
                               child: forgetPass.text.make(),
                             )),
                             5.heightBox,

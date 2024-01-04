@@ -6,17 +6,10 @@ import 'package:austmart/consts/consts.dart';
 import 'package:austmart/widgets_common/applogo_widgets.dart';
 import 'package:austmart/widgets_common/bg_widget.dart';
 import 'package:austmart/widgets_common/custom_textfield.dart';
-<<<<<<< HEAD
 import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'featured_button.dart';
-=======
-import 'package:flutter/rendering.dart';
-import 'package:get/get.dart';
-import 'package:velocity_x/velocity_x.dart';
-import 'featured_button.dart'; // Import VelocityX for VxSwiper
 
->>>>>>> ce882405e26fda9312b11f799089aeb01d9d694f
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -35,19 +28,13 @@ class HomeScreen extends StatelessWidget {
               color: lightGrey,
               child: TextFormField(
                 decoration: const InputDecoration(
-<<<<<<< HEAD
+
                   border: InputBorder.none,
                   suffixIcon: Icon(Icons.search),
                   filled: true,
                   fillColor: whiteColor,
                   hintText: searchanything,
-=======
-                  border:InputBorder.none,
-                  suffixIcon: Icon(Icons.search),
-                  filled: true,
-                  fillColor: whiteColor,
-                  hintText: searchanything, // Fixed typo
->>>>>>> ce882405e26fda9312b11f799089aeb01d9d694f
+
                   hintStyle: TextStyle(color: textfieldGrey),
                 ),
               ),
@@ -55,7 +42,7 @@ class HomeScreen extends StatelessWidget {
             10.heightBox,
             Expanded(
               child: SingleChildScrollView(
-<<<<<<< HEAD
+
                 physics: const BouncingScrollPhysics(),
                 child: Column(
                   children: [
@@ -88,36 +75,7 @@ class HomeScreen extends StatelessWidget {
                           title: index == 0 ? todayDeal : flashsale,
                         ),
                       ),
-=======
-                physics:const BouncingScrollPhysics(),
-                child: Column(
-                  children: [   VxSwiper.builder(
-                    aspectRatio: 16 / 9,
-                    autoPlay: true,
-                    height: 150,
-                    enlargeCenterPage: true,
-                    itemCount: sliderList.length,
-                    itemBuilder: (context, index) {
-                      return Image.asset(
-                        sliderList[index],
-                        fit: BoxFit.fill,
-                      ).box
-                          .rounded
-                          .clip(Clip.antiAlias)
-                          .margin(const EdgeInsets.symmetric(horizontal: 8)).make();
-                    },
-                  ),
-                    10.heightBox,
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children:List.generate(2, (index) => homeButton(
-                        height:context.screenHeight*0.15,
-                        width:context.screenWidth/2.5,
-                        icon:index==0?icTodaysDeal:icFlashDeal,
-                        title:index==0?todayDeal:flashsale,
 
-                      )),
->>>>>>> ce882405e26fda9312b11f799089aeb01d9d694f
                     ),
                     10.heightBox,
                     VxSwiper.builder(
@@ -133,18 +91,16 @@ class HomeScreen extends StatelessWidget {
                         ).box
                             .rounded
                             .clip(Clip.antiAlias)
-<<<<<<< HEAD
+
                             .margin(const EdgeInsets.symmetric(horizontal: 8))
                             .make();
-=======
-                            .margin(const EdgeInsets.symmetric(horizontal: 8)).make();
->>>>>>> ce882405e26fda9312b11f799089aeb01d9d694f
+
                       },
                     ),
                     10.heightBox,
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-<<<<<<< HEAD
+
                       children: List.generate(
                         3,
                             (index) => homeButton(
@@ -310,44 +266,7 @@ class HomeScreen extends StatelessWidget {
                             .make();
                       },
                     ),
-=======
-                      children:List.generate(3, (index) => homeButton(
-                        height:context.screenHeight*0.15,
-                        width:context.screenWidth/3.5,
-                        icon:index==0
-                            ? icTopCategories
-                            : index==1
-                            ?icBrands
-                            :icTopSeller,
 
-                        title:index==0
-                            ?topCategories
-                            :index==1
-                            ?brand
-                            :topSeller,
-
-                      )),
-                    ),
-                    20.heightBox,
-                    Align(alignment: Alignment.centerLeft,child: catagories.text.color(darkFontGrey).size(18).fontFamily(semibold).make()),
-
-
-                    20.heightBox,
-                    SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        child:Row(
-                          children: List.generate(3,(index)=> Column(
-                            children: [
-                              featuredButton(icon: featuredImages1[index],title:featuredTitles1[index] ),
-                              10.heightBox,
-                              featuredButton(icon: featuredImages2[index],title:featuredTitles2[index] ),
-                            ],
-                          ),
-                          ),//column
-                        )
-
-                    )
->>>>>>> ce882405e26fda9312b11f799089aeb01d9d694f
                   ],
                 ),
               ),
@@ -357,8 +276,6 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
-<<<<<<< HEAD
+
 }
-=======
-}
->>>>>>> ce882405e26fda9312b11f799089aeb01d9d694f
+

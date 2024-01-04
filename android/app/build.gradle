@@ -3,11 +3,7 @@ plugins {
     id "kotlin-android"
     id "dev.flutter.flutter-gradle-plugin"
     id 'com.google.gms.google-services'
-<<<<<<< HEAD
 
-
-=======
->>>>>>> ce882405e26fda9312b11f799089aeb01d9d694f
 }
 
 def localProperties = new Properties()
@@ -30,11 +26,7 @@ if (flutterVersionName == null) {
 
 android {
     namespace "com.example.austmart"
-<<<<<<< HEAD
     compileSdkVersion flutter.compileSdkVersion
-=======
-    compileSdkVersion 33
->>>>>>> ce882405e26fda9312b11f799089aeb01d9d694f
     ndkVersion flutter.ndkVersion
 
     compileOptions {
@@ -55,17 +47,12 @@ android {
         applicationId "com.example.austmart"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
-<<<<<<< HEAD
-        minSdkVersion flutter.minSdkVersion
-        targetSdkVersion flutter.targetSdkVersion
-=======
-        minSdkVersion 26
-        targetSdkVersion 33
->>>>>>> ce882405e26fda9312b11f799089aeb01d9d694f
-        versionCode flutterVersionCode.toInteger()
-        versionName flutterVersionName
+
         minSdkVersion 21
         targetSdkVersion 33
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
+
     }
 
     buildTypes {
@@ -81,11 +68,9 @@ flutter {
     source '../..'
 }
 
-<<<<<<< HEAD
-dependencies {}
-=======
+
 dependencies {
-    implementation platform('com.google.firebase:firebase-bom:32.7.0')
+    implementation platform('com.google.firebase:firebase-bom:32.6.0')
     implementation 'com.google.firebase:firebase-analytics'
 }
->>>>>>> ce882405e26fda9312b11f799089aeb01d9d694f
+
