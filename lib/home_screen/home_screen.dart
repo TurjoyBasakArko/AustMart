@@ -105,14 +105,23 @@ class HomeScreen extends StatelessWidget {
                
                          )),
                        ),
-                       10.heightBox,
-                       Align(
-                           alignment:Alignment.centerLeft,
-                           child: featurecatagories
-                               .text.color(darkFontGrey)
-                               .size(18)
-                               .fontFamily(semibold)
-                               .make()
+                       20.heightBox,
+                       Align(alignment: Alignment.centerLeft,child: catagories.text.color(darkFontGrey).size(18).fontFamily(semibold).make()), 
+                           
+                         20.heightBox,
+                         SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child:Row(
+                            children: List.generate(3,(index)=> Column(
+                            children: [
+                              featuredButton(icon: featuredImages1[index],title:featuredTitles1[index] ),
+                              10.heightBox,
+                              featuredButton(icon: featuredImages2[index],title:featuredTitles2[index] ),
+                            ],
+                          ),
+                        ),//column
+                         )
+
                        )
                      ],
                ),
