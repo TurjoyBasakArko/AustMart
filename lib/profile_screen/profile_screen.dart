@@ -1,6 +1,9 @@
 import 'package:austmart/consts/list.dart';
+import 'package:austmart/home_controller/auth_controller.dart';
 import 'package:austmart/home_controller/home_controller.dart';
+import 'package:austmart/home_controller/profile_controller.dart';
 import 'package:austmart/profile_screen/components/details_button.dart';
+import 'package:austmart/profile_screen/edit_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:austmart/consts/consts.dart';
 import 'package:austmart/widgets_common/applogo_widgets.dart';
@@ -8,6 +11,8 @@ import 'package:austmart/widgets_common/bg_widget.dart';
 import 'package:austmart/widgets_common/custom_textfield.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
+
+import '../auth_screen/login_screen.dart';
 
 
 class ProfileScreen extends StatelessWidget
@@ -17,6 +22,8 @@ class ProfileScreen extends StatelessWidget
 
   @override
   Widget build(BuildContext context) {
+    var controller= Get.put(ProfileController());
+
     return bgWidget(
       child: Scaffold(
         body:SafeArea(
@@ -25,8 +32,13 @@ class ProfileScreen extends StatelessWidget
             child: Column(
               children: [
                    //Edit profile section
-                const Align(
-                  alignment: Alignment.topCenter, child: Icon(Icons.edit, color: Colors.white)).onTap(() { }),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: const Align(
+                    alignment: Alignment.topRight, child: Icon(Icons.edit, color: Colors.white)).onTap(() {
+                    Get.to(()=>const EditProfile()) ;
+                  }),
+                ),
 
                    //User details Section
                 Row(
@@ -44,14 +56,19 @@ class ProfileScreen extends StatelessWidget
                     ),
                     OutlinedButton(
                       style: OutlinedButton.styleFrom(
-                        side: const BorderSide(color: whiteColor)
-                      ),
-                        onPressed: () {},
-                        child: 'Logout'.text.fontFamily(semibold).white.make(),
+                        side: const BorderSide(
+                            color: whiteColor
+                        )),
+                        onPressed: () async {
+                          await Get.put(AuthController()).signoutMethod(context);
+                          Get.offAll(() => const LoginScreen());
+                        },
+                        child: 'logout'.text.fontFamily(semibold).white.make(),
                     )
                     ],
 
                 ),
+
 
                 20.heightBox,
                 Row(
