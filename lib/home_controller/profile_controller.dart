@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 import 'dart:html';
 
@@ -55,6 +56,27 @@ class ProfileController extends GetxController{
 
  }
 
+=======
+import 'package:austmart/consts/consts.dart';
+import 'package:flutter/services.dart';
+import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
+
+class ProfileController extends GetxController{
+ var profileImgPath=''.obs;
+ var nameController= TextEditingController();
+ var passController= TextEditingController();
+
+ changeImage(context) async{
+   final img=await ImagePicker().pickImage(source: ImageSource.gallery,imageQuality: 70);
+   try{
+     if(img ==null) return;
+     profileImgPath.value=img.path;
+   }on PlatformException catch(e){
+      VxToast.show(context , msg: e.toString());
+   }
+ }
+>>>>>>> 565700a6086f8ca158a1de1d5f4de09ac17c2084
 }
 
 
