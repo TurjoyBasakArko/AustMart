@@ -40,7 +40,12 @@ class AuthController extends GetxController{
   //storing data method
   storeUserData({name, password, email}) async {
     DocumentReference store =  firestore.collection(usersCollection).doc(currentUser!.uid);
+<<<<<<< HEAD
+    store.set(
+    {
+=======
     store.set({
+>>>>>>> 565700a6086f8ca158a1de1d5f4de09ac17c2084
       'name': name,
       'password': password,
       'email': email,
@@ -49,7 +54,12 @@ class AuthController extends GetxController{
       'cart_count':"00",
       'wishlist_count':"00",
       'order_count':"00",
+<<<<<<< HEAD
+    },
+    );
+=======
     });
+>>>>>>> 565700a6086f8ca158a1de1d5f4de09ac17c2084
   }
 
   //signout method

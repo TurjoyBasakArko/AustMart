@@ -21,6 +21,12 @@ dependencies:
   cloud_firestore: ^4.13.6
   provider: ^6.1.1
   image_picker: ^1.0.7
+<<<<<<< HEAD
+  file_picker: ^6.1.1
+  firebase_storage: ^11.6.0
+
+=======
+>>>>>>> 565700a6086f8ca158a1de1d5f4de09ac17c2084
 
 
 
