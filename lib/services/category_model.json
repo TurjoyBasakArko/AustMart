@@ -1,0 +1,60 @@
+{
+  "categories": [
+    {
+      "name": "material 1",
+      "subcategory": [
+        "element 1 ",
+        "element 2",
+        "element 3"
+      ]
+    },
+    {
+      "name": "material 1",
+      "subcategory": [
+        "element 1 ",
+        "element 2",
+        "element 3"
+      ]
+    },
+    {
+      "name": "material 2",
+      "subcategory": [
+        "element 1 ",
+        "element 2",
+        "element 3"
+      ]
+    },
+    {
+      "name": "material 3",
+      "subcategory": [
+        "element 1 ",
+        "element 2",
+        "element 3"
+      ]
+    },
+    {
+      "name": "material 4",
+      "subcategory": [
+        "element 1 ",
+        "element 2",
+        "element 3"
+      ]
+    },
+    {
+      "name": "material 5",
+      "subcategory": [
+        "element 1 ",
+        "element 2",
+        "element 3"
+      ]
+    },
+    {
+      "name": "material 6",
+      "subcategory": [
+        "element 1 ",
+        "element 2",
+        "element 3"
+      ]
+    },
+  ]
+}
