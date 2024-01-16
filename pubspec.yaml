@@ -49,6 +49,7 @@ flutter:
     - assets/
     - assets/icons/
     - assets/images/
+    - lib/services/category_model.json
 
   # fonts:
   #   - family: Schyler
