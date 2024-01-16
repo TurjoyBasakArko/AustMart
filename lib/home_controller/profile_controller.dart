@@ -2,6 +2,7 @@
 //import 'dart:html';
 import 'package:austmart/consts/consts.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -54,8 +55,17 @@ class ProfileController extends GetxController{
    isloading(false);
 
  }
+ changeAuthPassword({email,password,newpassword})async{
+   final cred = EmailAuthProvider.credential(email: email, password: password);
 
+   await currentUser!.reauthenticateWithCredential(cred).then((value){
+     currentUser!.updatePassword(newpassword);
 
+     }).catchError((error){
+       print(error.toString());
+   });
+
+   }
 }
 
 
