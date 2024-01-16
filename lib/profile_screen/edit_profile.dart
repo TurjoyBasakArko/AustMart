@@ -70,7 +70,7 @@ class EditProfile extends StatelessWidget {
               ),
               10.heightBox,
               customTextField(
-                  controller: controller.oldpassController,
+                  controller: controller.newpassController,
                   hint: passwordHint,
                   title: newpass,
                   isPass: true
@@ -91,13 +91,29 @@ class EditProfile extends StatelessWidget {
                     }else{
                       controller.profileImageLink= data['imageUrl'];
                     }
+                    //if old password match database here
+                    if (data ['password']== controller.oldpassController.text){
+
+                      await controller.changeAuthPassword(
+                        email : data ['email'],
+                        password : controller.oldpassController.text,
+                        newpassword: controller.newpassController.text);
 
 
-                    await controller.updateProfile(
-                      //imgUrl: controller.profileImageLink,
-                      name: controller.nameController.text,
-                      password: controller.newpassController.text);
-                    VxToast.show(context, msg: "Updated");
+
+
+                      await controller.updateProfile(
+                        //imgUrl: controller.profileImageLink,
+                          name: controller.nameController.text,
+                          password: controller.newpassController.text);
+                      VxToast.show(context, msg: "Updated");
+
+                    }else {
+                      VxToast.show(context, msg: "Wrong old password");
+                      controller.isloading(false);
+                    }
+
+
 
                   },
                       textcolor: whiteColor,
