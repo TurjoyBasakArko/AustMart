@@ -27,3 +27,12 @@ const featuredImages2 = [imgS4, imgS5, imgS6];
 
 const featuredTitles1 = [womenDress, girlsDress, girlsWatches];
 const featuredTitles2 = [boysGlasses, mobilePhone, tShirts];
+const imgfeatureproduct=[
+  imgP1,
+  imgP2,
+  imgP3,
+  imgP4,
+  imgP5,
+  imgP6,
+  imgP7,
+];
