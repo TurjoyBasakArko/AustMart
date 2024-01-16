@@ -105,7 +105,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.3.1"
-<<<<<<< HEAD
   ffi:
     dependency: transitive
     description:
@@ -122,8 +121,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "6.1.1"
-=======
->>>>>>> 565700a6086f8ca158a1de1d5f4de09ac17c2084
   file_selector_linux:
     dependency: transitive
     description:
@@ -204,7 +201,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.10.0"
-<<<<<<< HEAD
   firebase_storage:
     dependency: "direct main"
     description:
@@ -229,8 +225,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.6.17"
-=======
->>>>>>> 565700a6086f8ca158a1de1d5f4de09ac17c2084
   flutter:
     dependency: "direct main"
     description: flutter
@@ -298,17 +292,10 @@ packages:
     dependency: transitive
     description:
       name: image_picker_android
-<<<<<<< HEAD
       sha256: "39f2bfe497e495450c81abcd44b62f56c2a36a37a175da7d137b4454977b51b1"
       url: "https://pub.dev"
     source: hosted
     version: "0.8.9+3"
-=======
-      sha256: "1a27bf4cc0330389cebe465bab08fe6dec97e44015b4899637344bb7297759ec"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.8.9+2"
->>>>>>> 565700a6086f8ca158a1de1d5f4de09ac17c2084
   image_picker_for_web:
     dependency: transitive
     description:
@@ -321,17 +308,10 @@ packages:
     dependency: transitive
     description:
       name: image_picker_ios
-<<<<<<< HEAD
       sha256: fadafce49e8569257a0cad56d24438a6fa1f0cbd7ee0af9b631f7492818a4ca3
       url: "https://pub.dev"
     source: hosted
     version: "0.8.9+1"
-=======
-      sha256: eac0a62104fa12feed213596df0321f57ce5a572562f72a68c4ff81e9e4caacf
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.8.9"
->>>>>>> 565700a6086f8ca158a1de1d5f4de09ac17c2084
   image_picker_linux:
     dependency: transitive
     description:
@@ -545,7 +525,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.3.0"
-<<<<<<< HEAD
   win32:
     dependency: transitive
     description:
@@ -554,8 +533,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "5.2.0"
-=======
->>>>>>> 565700a6086f8ca158a1de1d5f4de09ac17c2084
 sdks:
   dart: ">=3.2.0 <4.0.0"
   flutter: ">=3.13.0"

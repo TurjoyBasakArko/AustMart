@@ -48,22 +48,19 @@ class ProfileScreen extends StatelessWidget
                       //Edit profile section
                       Padding(
                         padding: const EdgeInsets.all(8.0),
-<<<<<<< HEAD
+
                         child: const Align(alignment: Alignment.topRight, child: Icon(Icons.edit, color: Colors.white)).onTap(() {
 
                           controller.nameController.text= data['name'];
-                          controller.passController.text= data['password'];
+                          //controller.passController.text= data['password'];
 
-=======
-                        child: const Align(
-                            alignment: Alignment.topRight, child: Icon(Icons.edit, color: Colors.white)).onTap(() {
->>>>>>> 565700a6086f8ca158a1de1d5f4de09ac17c2084
+
                           Get.to(()=> EditProfile(data: data,)) ;
                         }),
                       ),
 
                       //User details Section
-<<<<<<< HEAD
+
                       Padding(padding: const EdgeInsets.symmetric(horizontal: 8.0),
                         child: Row(
                           children: <Widget>[
@@ -101,37 +98,7 @@ class ProfileScreen extends StatelessWidget
 
                       ),
 
-=======
-                      Row(
-                        children: <Widget>[
-                          Image.asset(imgProfile2,width: 110,fit: BoxFit.cover).box.roundedFull.clip(Clip.antiAlias).make(),
-                          5.widthBox,
-                          Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  "${data['name']}".text.size(18).fontFamily(semibold).white.make(),
-                                  "${data['email']}".text.white.make(),
-                                ],
-                              )
-                          ),
-                          OutlinedButton(
-                            style: OutlinedButton.styleFrom(
-                                side: const BorderSide(
-                                    color: whiteColor
-                                )),
-                            onPressed: () async {
-                              await Get.put(AuthController()).signoutMethod(context);
-                              Get.offAll(() => const LoginScreen());
-                            },
-                            child: 'logout'.text.fontFamily(semibold).white.make(),
-                          )
-                        ],
 
-                      ),
-
-
->>>>>>> 565700a6086f8ca158a1de1d5f4de09ac17c2084
                       20.heightBox,
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
