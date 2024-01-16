@@ -50,7 +50,9 @@ const boysGlasses = "Boys Glasses";
 const tShirts = "T-Shirts";
 const girlsDress = "Girls Dress";
 
-const featureProduct = "Featured Product";
+const featuredproduct = "Featured Product";
+
+
 
 
 

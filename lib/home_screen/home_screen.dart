@@ -108,23 +108,96 @@ class HomeScreen extends StatelessWidget {
                       )),
                     ),
                     20.heightBox,
-                    Align(alignment: Alignment.centerLeft,child: catagories.text.color(darkFontGrey).size(18).fontFamily(semibold).make()),
+
 
 
                     20.heightBox,
                     SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        child:Row(
-                          children: List.generate(3,(index)=> Column(
-                            children: [
-                              featuredButton(icon: featuredImages1[index],title:featuredTitles1[index] ),
-                              10.heightBox,
-                              featuredButton(icon: featuredImages2[index],title:featuredTitles2[index] ),
-                            ],
-                          ),
-                          ),//column
-                        )
+                      scrollDirection: Axis.horizontal,
 
+
+                    ),
+                    20.heightBox,
+                    Container(
+                      padding: const EdgeInsets.all(12),
+                      width: double.infinity,
+                      decoration: const BoxDecoration(color: redColor),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          featuredproduct.text.white.fontFamily(bold).size(18).make(),
+                          10.heightBox,
+                          SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Row(
+                              children: List.generate(
+                                imgfeatureproduct.length,
+                                    (index) => Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Image.asset(
+                                      imgfeatureproduct[index],
+                                      width: 150,
+                                      fit: BoxFit.cover,
+                                    ),
+                                    10.heightBox,
+                                    "Laptop 4GB/64GB".text.fontFamily(semibold).color(darkFontGrey).make(),
+                                    10.heightBox,
+                                    "ট600".text.color(redColor).fontFamily(bold).size(16).make(),
+                                  ],
+
+                                ).box.white.margin(const EdgeInsets.symmetric(horizontal: 4)).rounded.padding(const EdgeInsets.all(8)).make(),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    20.heightBox,
+                    VxSwiper.builder
+                      (
+                      aspectRatio: 16 / 9,
+                      autoPlay: true,
+                      height: 150,
+                      enlargeCenterPage: true,
+                      itemCount: secondsliderList.length,
+                      itemBuilder: (context, index) {
+                        return Image.asset(
+                          secondsliderList[index],
+                          fit: BoxFit.fill,
+                        ).box
+                            .rounded
+                            .clip(Clip.antiAlias)
+                            .margin(const EdgeInsets.symmetric(horizontal: 8))
+                            .make();
+                      },
+                    ),
+                    20.heightBox,
+                    GridView.builder(
+                        physics:const NeverScrollableScrollPhysics() ,
+                        shrinkWrap:true,
+                        itemCount:6,
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,mainAxisSpacing:8,crossAxisSpacing: 8,mainAxisExtent: 300 ),
+                        itemBuilder: (context,index)
+                        {
+                          return Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Image.asset(
+                                imgfeatureproduct[index],
+                                height:200,
+                                width: 200,
+                                fit: BoxFit.cover,
+                              ),
+                              const Spacer(),
+                              "Laptop 4GB/64GB".text.fontFamily(semibold).color(darkFontGrey).make(),
+                              10.heightBox,
+                              "ট600".text.color(redColor).fontFamily(bold).size(16).make(),
+                              10.heightBox,
+                            ],
+
+                          ).box.white.margin(const EdgeInsets.symmetric(horizontal: 4)).rounded.padding(const EdgeInsets.all(8)).make();
+                        }
                     )
                   ],
                 ),
