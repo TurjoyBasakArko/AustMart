@@ -1,5 +1,5 @@
 import 'dart:io';
-
+//import 'dart:html';
 import 'package:austmart/consts/consts.dart';
 import 'package:austmart/home_controller/profile_controller.dart';
 import 'package:austmart/widgets_common/bg_widget.dart';
@@ -14,18 +14,12 @@ class EditProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var controller =Get.find<ProfileController>();
-<<<<<<< HEAD
 
-
-=======
-    controller.nameController.text= data['name'];
-    controller.passController.text= data['password'];
->>>>>>> 565700a6086f8ca158a1de1d5f4de09ac17c2084
     return bgWidget(
       child: Scaffold(
         appBar: AppBar(),
         body: Obx(
-<<<<<<< HEAD
+
            ()=>Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -45,8 +39,7 @@ class EditProfile extends StatelessWidget {
                           ).box.roundedFull.clip(Clip.antiAlias).make()
 
                       //if both are empty
-                      : Image.file(
-                          File(controller.profileImgPath.value ),
+                      : Image.file(File(controller.profileImgPath.value ),
                           width:100,
                           fit: BoxFit.cover ,
                           ).box.roundedFull.clip(Clip.antiAlias).make(),
@@ -68,10 +61,18 @@ class EditProfile extends StatelessWidget {
                   title: name,
                   isPass: false
               ),
+              10.heightBox,
               customTextField(
-                  controller: controller.passController,
+                  controller: controller.oldpassController,
                   hint: passwordHint,
-                  title: password,
+                  title: oldpass,
+                  isPass: true
+              ),
+              10.heightBox,
+              customTextField(
+                  controller: controller.oldpassController,
+                  hint: passwordHint,
+                  title: newpass,
                   isPass: true
               ),
               20.heightBox,
@@ -82,13 +83,20 @@ class EditProfile extends StatelessWidget {
               : SizedBox(
                   width: context.screenWidth - 100,
                   child: CustomButton(color: redColor,onPress: () async {
-                    controller.isloading(true);
 
-                    await controller.uploadProfileImage();
+
+                    controller.isloading(true);
+                    if(controller.profileImgPath.value.isNotEmpty){
+                      await controller.uploadProfileImage();
+                    }else{
+                      controller.profileImageLink= data['imageUrl'];
+                    }
+
+
                     await controller.updateProfile(
                       //imgUrl: controller.profileImageLink,
                       name: controller.nameController.text,
-                      password: controller.passController.text);
+                      password: controller.newpassController.text);
                     VxToast.show(context, msg: "Updated");
 
                   },
@@ -103,38 +111,8 @@ class EditProfile extends StatelessWidget {
                .margin(EdgeInsets.only(top: 50,left: 12,right: 12))
                .rounded
                .make(),
-=======
-              ()=>Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
 
 
-              controller.profileImgPath.isEmpty ? Image.asset(imgProfile2,width: 70,fit: BoxFit.cover).box.roundedFull.clip(Clip.antiAlias).make():Image.file(
-                  File(controller.profileImgPath.value ),
-                width:100,
-                fit: BoxFit.cover ,
-              ).box.roundedFull.clip(Clip.antiAlias).make(),
-
-
-              10.heightBox,
-              CustomButton(onPress: () {
-                controller.changeImage(context);
-              } ,color: redColor,textcolor: whiteColor,title: "Change",),
-              Divider(),
-              20.heightBox,
-              customTextField(
-                controller: controller.nameController,
-                  hint: nameHint,title: name,isPass: false),
-              customTextField(
-                controller: controller.passController,
-                  hint: passwordHint,title: password,isPass: true),
-              20.heightBox,
-              SizedBox(
-                  width: 100,
-                  child: CustomButton(color: redColor,onPress: () {},textcolor: whiteColor,title: "Save")),
-            ],
-          ).box.white.shadowSm.padding(EdgeInsets.all(16)).margin(EdgeInsets.only(top: 50,right: 12,left: 12)).rounded.make(),
->>>>>>> 565700a6086f8ca158a1de1d5f4de09ac17c2084
         ),
       )
     );

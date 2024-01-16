@@ -33,7 +33,7 @@ const topSeller="Top Sellers";
 const featurecatagories="Faetured Catagories";
 const topCategories="top catagories";
 const brand="brand";
-const wishlist="My Wishlists", orders="My Orders",messages= "Messeges";
+const wishlist="My Wishlists", orders="My Orders",messages= "Messeges",newpass="New Password",oldpass="Old Password";
 
 //catagory strings
 const books= "Books";
