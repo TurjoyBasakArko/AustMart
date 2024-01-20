@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "298399611911",
-    "project_id": "austmart-177a4",
-    "storage_bucket": "austmart-177a4.appspot.com"
+    "project_number": "666731394983",
+    "project_id": "austmart-2b349",
+    "storage_bucket": "austmart-2b349.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:298399611911:android:a184652a5e7db1cee3bea2",
+        "mobilesdk_app_id": "1:666731394983:android:7b2d52343bcd813f3ba882",
         "android_client_info": {
           "package_name": "com.example.austmart"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBEFq_zChjwzgJ1uyRFrYTUz4Q8Zl0DQTM"
+          "current_key": "AIzaSyAHqDxCTy3g-J-kM9az6-GIrYZsyrfpfw4"
         }
       ],
       "services": {

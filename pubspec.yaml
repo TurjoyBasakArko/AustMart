@@ -17,9 +17,15 @@ dependencies:
   velocity_x: ^4.1.2
   cupertino_icons: ^1.0.2
   firebase_core: ^2.24.2
-  firebase_auth: ^4.15.3
+  firebase_auth: ^4.16.0
   cloud_firestore: ^4.13.6
   provider: ^6.1.1
+  image_picker: ^1.0.7
+
+  file_picker: ^6.1.1
+  firebase_storage: ^11.6.0
+
+
 
 
 
@@ -28,7 +34,7 @@ dev_dependencies:
     sdk: flutter
 
 
-  flutter_lints: ^2.0.0
+  flutter_lints: ^3.0.1
 
 
 flutter:
@@ -43,6 +49,7 @@ flutter:
     - assets/
     - assets/icons/
     - assets/images/
+    - lib/services/category_model.json
 
   # fonts:
   #   - family: Schyler

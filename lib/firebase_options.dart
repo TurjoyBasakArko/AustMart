@@ -44,38 +44,37 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDp-3k0vTy08YoHsg5LDZMctSc-L_dJa8g',
-    appId: '1:298399611911:web:3b4cb5e9c7e6466ee3bea2',
-    messagingSenderId: '298399611911',
-    projectId: 'austmart-177a4',
-    authDomain: 'austmart-177a4.firebaseapp.com',
-    storageBucket: 'austmart-177a4.appspot.com',
-    measurementId: 'G-RTGG4BYPP0',
+    apiKey: 'AIzaSyCOeLpqahxWh1Wmn4J-kuyNV_gDQUsVHwM',
+    appId: '1:666731394983:web:b9ec6f2d0fdfdd713ba882',
+    messagingSenderId: '666731394983',
+    projectId: 'austmart-2b349',
+    authDomain: 'austmart-2b349.firebaseapp.com',
+    storageBucket: 'austmart-2b349.appspot.com',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBEFq_zChjwzgJ1uyRFrYTUz4Q8Zl0DQTM',
-    appId: '1:298399611911:android:a184652a5e7db1cee3bea2',
-    messagingSenderId: '298399611911',
-    projectId: 'austmart-177a4',
-    storageBucket: 'austmart-177a4.appspot.com',
+    apiKey: 'AIzaSyAHqDxCTy3g-J-kM9az6-GIrYZsyrfpfw4',
+    appId: '1:666731394983:android:7b2d52343bcd813f3ba882',
+    messagingSenderId: '666731394983',
+    projectId: 'austmart-2b349',
+    storageBucket: 'austmart-2b349.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCJjHX9m6R1yk5lz132UbJa9M1H77zUzJs',
-    appId: '1:298399611911:ios:93e82e92bfc16c24e3bea2',
-    messagingSenderId: '298399611911',
-    projectId: 'austmart-177a4',
-    storageBucket: 'austmart-177a4.appspot.com',
+    apiKey: 'AIzaSyCXetSlXgyv-5hQ3AqAD5SgJ8BB3pmzz0s',
+    appId: '1:666731394983:ios:2e1e7a3597de18113ba882',
+    messagingSenderId: '666731394983',
+    projectId: 'austmart-2b349',
+    storageBucket: 'austmart-2b349.appspot.com',
     iosBundleId: 'com.example.austmart',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyCJjHX9m6R1yk5lz132UbJa9M1H77zUzJs',
-    appId: '1:298399611911:ios:18711f427a297ddae3bea2',
-    messagingSenderId: '298399611911',
-    projectId: 'austmart-177a4',
-    storageBucket: 'austmart-177a4.appspot.com',
+    apiKey: 'AIzaSyCXetSlXgyv-5hQ3AqAD5SgJ8BB3pmzz0s',
+    appId: '1:666731394983:ios:fd7ded18a340cc343ba882',
+    messagingSenderId: '666731394983',
+    projectId: 'austmart-2b349',
+    storageBucket: 'austmart-2b349.appspot.com',
     iosBundleId: 'com.example.austmart.RunnerTests',
   );
 }
