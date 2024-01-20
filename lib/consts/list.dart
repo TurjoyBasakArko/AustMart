@@ -36,3 +36,5 @@ const imgfeatureproduct=[
   imgP6,
   imgP7,
 ];
+const paymentMethodsImg = [imgPaypal, imgStripe, imgCod];
+const paymentMethods = [paypal, stripe, cod];

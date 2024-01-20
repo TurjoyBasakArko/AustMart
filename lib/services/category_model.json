@@ -1,60 +1,32 @@
 {
   "categories": [
     {
-      "name": "material 1",
-      "subcategory": [
-        "element 1 ",
-        "element 2",
-        "element 3"
-      ]
+      "name": "bookx",
+      "subcategory": ["cse", "cse", "cse", "cse", "cse", "cse", "cse"]
     },
     {
       "name": "material 1",
-      "subcategory": [
-        "element 1 ",
-        "element 2",
-        "element 3"
-      ]
+      "subcategory": ["cse", "cse", "cse", "cse", "cse", "cse", "cse"]
     },
     {
       "name": "material 2",
-      "subcategory": [
-        "element 1 ",
-        "element 2",
-        "element 3"
-      ]
+      "subcategory": ["cse", "cse", "cse", "cse", "cse", "cse", "cse"]
     },
     {
       "name": "material 3",
-      "subcategory": [
-        "element 1 ",
-        "element 2",
-        "element 3"
-      ]
+      "subcategory": ["cse", "cse", "cse", "cse", "cse", "cse", "cse"]
     },
     {
       "name": "material 4",
-      "subcategory": [
-        "element 1 ",
-        "element 2",
-        "element 3"
-      ]
+      "subcategory": ["cse", "cse", "cse", "cse", "cse", "cse", "cse"]
     },
     {
       "name": "material 5",
-      "subcategory": [
-        "element 1 ",
-        "element 2",
-        "element 3"
-      ]
+      "subcategory": ["cse", "cse", "cse", "cse", "cse", "cse", "cse"]
     },
     {
       "name": "material 6",
-      "subcategory": [
-        "element 1 ",
-        "element 2",
-        "element 3"
-      ]
-    },
+      "subcategory": ["cse", "cse", "cse", "cse", "cse", "cse", "cse"]
+    }
   ]
 }
