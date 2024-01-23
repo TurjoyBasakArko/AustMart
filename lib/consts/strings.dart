@@ -34,7 +34,7 @@ const featurecatagories="Faetured Catagories";
 const topCategories="top catagories";
 const brand="brand";
 const wishlist="My Wishlists", orders="My Orders",messages= "Messeges",newpass="New Password",oldpass="Old Password";
-
+const featuredproduct="featuredproduct";
 //catagory strings
 const books= "Books";
 const    labMaterials="Lab Materials";
@@ -50,7 +50,10 @@ const boysGlasses = "Boys Glasses";
 const tShirts = "T-Shirts";
 const girlsDress = "Girls Dress";
 
-const featuredproduct = "Featured Product";
+const paypal = "Paypal";
+const stripe = "Stripe";
+const cod = "Cash on Delivary";
+
 
 
 
