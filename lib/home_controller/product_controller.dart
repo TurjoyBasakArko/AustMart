@@ -1,6 +1,7 @@
-import 'dart:html';
-import 'dart:js';
-
+//import 'dart:html';
+//import 'dart:js';
+//import 'dart:js';
+//import 'dart:html';
 import 'package:austmart/consts/consts.dart';
 import 'package:austmart/models/category_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -78,6 +79,22 @@ class ProductController extends GetxController {
         snackPosition: SnackPosition.BOTTOM);
   }
 
+  increaseQuantity(totalQuantity) {
+    if (quantity.value < totalQuantity) {
+      quantity.value++;
+    }
+  }
+
+  decreaseQuantity() {
+    if (quantity.value > 0) {
+      quantity.value--;
+    }
+  }
+
+  calculateTotalPrice(price)
+  {
+    price * quantity.value;
+  }
   removefromWishList(docId) async {
     await firestore.collection(productsCollection).doc(docId).set({
       'p_wishlist': FieldValue.arrayRemove([currentUser!.uid])

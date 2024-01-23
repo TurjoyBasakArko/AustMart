@@ -1,7 +1,7 @@
 
 //import 'dart:html';
-import 'dart:html';
-
+//import 'dart:html';
+//import 'dart:js';
 import 'package:austmart/consts/consts.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -47,7 +47,7 @@ class ProfileController extends GetxController{
    var filename = basename(profileImgPath.value);
    var destination = 'images/${currentUser!.uid}/$filename';
    Reference ref = FirebaseStorage.instance.ref().child(destination);
-   //await ref.putFile(File(profileImgPath.alue));
+   //await ref.putFile(File(profileImgPath.value));
    profileImageLink = await ref.getDownloadURL();
 
  }

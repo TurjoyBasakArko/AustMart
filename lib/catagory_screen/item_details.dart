@@ -92,16 +92,7 @@ class ItemDetails extends StatelessWidget {
                       10.heightBox,
                       title!.text.color(darkFontGrey).size(18).fontFamily(bold).make(),
                       10.heightBox,
-                      VxRating(
-                        isSelectable: false,
-                        value: double.parse(data['p_rating']), // Uncomment this line
-                        onRatingUpdate: (value) {},
-                        normalColor: textfieldGrey,
-                        selectionColor: golden,
-                        count: 5,
-                        maxRating: 5,
-                        size: 25,
-                      ),
+
                       10.heightBox,
                       "${data['p_price']}".numCurrency.text.fontFamily(semibold).size(18).color(Colors.red).make(),
                       20.heightBox,
@@ -133,34 +124,41 @@ class ItemDetails extends StatelessWidget {
                             children: [
                               SizedBox(
                                 width: 100,
-                                child: "Color: ".text.size(18).color(darkFontGrey).make(),
+                                child: "Quantity: ".text.size(18).color(darkFontGrey).make(),
                               ),
                               Obx(()=>
                                   Row(
                                     children: [
-                                      IconButton(onPressed: () {}, icon: Icon(Icons.remove),),
+                                      IconButton(onPressed: () {
+                                        controller.decreaseQuantity();
+                                        controller.calculateTotalPrice(int.parse(data['p_price']));
+                                      }, icon: Icon(Icons.remove),),
                                       controller.quantity.value.text.color(darkFontGrey).fontFamily(bold).make(),
-                                      IconButton(onPressed: () {}, icon: Icon(Icons.add)),
+                                      IconButton(onPressed: () {controller.increaseQuantity(int.parse(data['p_quantity']));
+                                        controller.calculateTotalPrice(int.parse(data['p_price']));
+                                        }, icon: Icon(Icons.add)),
                                       10.widthBox,
-                                      "(available)".text.color(darkFontGrey).fontFamily(semibold).make(),
+                                      "(${data['p_quantity']} available)".text.color(darkFontGrey).fontFamily(semibold).make(),
                                     ],
                                   ),
                               ),
                             ],
                           ).box.padding(EdgeInsets.all(8)).make(),
+
                           Row(
                             children: [
                               SizedBox(
                                 width: 100,
                                 child: "Total :".text.color(darkFontGrey).fontFamily(semibold).make(),
                               ),
-                              "0/-".text.color(Colors.red).fontFamily(bold).size(18).make(),
+                              "${controller.totalPrice.value}".numCurrency.text.color(Colors.red).fontFamily(bold).size(18).make(),
                             ],
                           ).box.padding(EdgeInsets.all(8)).make(),
                         ],
                       ).box.white.shadowSm.make(),
                       10.heightBox,
-                      "Description: ".text.color(darkFontGrey).size(18).make(),
+                      "Description: ${data['p_desc']}".text.color(darkFontGrey).size(18).make(),
+                      10.widthBox,
                     ],
                   ),
                 ),
