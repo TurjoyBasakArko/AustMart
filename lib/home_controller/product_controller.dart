@@ -1,8 +1,5 @@
-
 //import 'dart:html';
 //import 'dart:js';
-//import 'dart:js';
-//import 'dart:html';
 
 import 'package:austmart/consts/consts.dart';
 import 'package:austmart/models/category_model.dart';
@@ -14,10 +11,8 @@ import '../consts/firebase_consts.dart';
 
 class ProductController extends GetxController {
   var quantity = 0.obs;
-
   var colorIndex = 0.obs;
   var totalPrice = 0.obs;
-
   var subcat = [];
   var isFav = false.obs;
 
@@ -35,16 +30,12 @@ class ProductController extends GetxController {
   }
 
   Future<void> addToCart({
-
     color,
-
     required String title,
     required String img,
     required String sellername,
     required int qty,
-
     required int tprice,
-
     required BuildContext context,
   }) async {
     try {
@@ -66,9 +57,7 @@ class ProductController extends GetxController {
   resetValues() {
     totalPrice.value = 0;
     quantity.value = 0;
-
     colorIndex.value = 0;
-
   }
 
   checkIfFav(data) async {
@@ -87,24 +76,6 @@ class ProductController extends GetxController {
     // Show a success message using Get.snackbar
     Get.snackbar('Wishlist', 'Added to wishlist',
         snackPosition: SnackPosition.BOTTOM);
-  }
-
-
-  increaseQuantity(totalQuantity) {
-    if (quantity.value < totalQuantity) {
-      quantity.value++;
-    }
-  }
-
-  decreaseQuantity() {
-    if (quantity.value > 0) {
-      quantity.value--;
-    }
-  }
-
-  calculateTotalPrice(price)
-  {
-    price * quantity.value;
   }
 
   removefromWishList(docId) async {

@@ -3,6 +3,7 @@ import 'package:austmart/catagory_screen/catagory_screen.dart';
 import 'package:austmart/home_controller/home_controller.dart';
 import 'package:austmart/home_screen/home_screen.dart';
 import 'package:austmart/profile_screen/profile_screen.dart';
+import 'package:austmart/widgets_common/exit_dialogue.dart';
 import 'package:flutter/material.dart';
 import 'package:austmart/consts/consts.dart';
 import 'package:austmart/widgets_common/applogo_widgets.dart';
@@ -31,29 +32,38 @@ class Home extends StatelessWidget{
       CatagoryScreen(),
       CartScreen(),
       ProfileScreen(),
-
     };
-    return Scaffold(
-      body: Column(
-        children: [
-          Obx(
-                  ()=> Expanded(child:navBody.elementAt(controller.currentNavIndex.value))),
-        ],
-      ),
-      bottomNavigationBar: Obx(
-            ()=>
-            BottomNavigationBar(
-              items: navbarItem,
-              currentIndex: controller.currentNavIndex.value,
-              selectedItemColor: redColor,
-              selectedLabelStyle:const TextStyle(fontFamily:semibold) ,
-              type:BottomNavigationBarType.fixed,
-              backgroundColor:whiteColor,
-              onTap:(value){
-                controller.currentNavIndex.value=value;
-              }
-              ,
-            ),
+
+    return WillPopScope(
+      onWillPop: () async{
+        showDialog(
+            barrierDismissible: false,
+            context: context,
+            builder:(context)=>exitDialoge(context));
+        return false;
+        },
+      child: Scaffold(
+        body: Column(
+          children: [
+            Obx(
+                    ()=> Expanded(child:navBody.elementAt(controller.currentNavIndex.value))),
+          ],
+        ),
+        bottomNavigationBar: Obx(
+              ()=>
+              BottomNavigationBar(
+                items: navbarItem,
+                currentIndex: controller.currentNavIndex.value,
+                selectedItemColor: redColor,
+                selectedLabelStyle:const TextStyle(fontFamily:semibold) ,
+                type:BottomNavigationBarType.fixed,
+                backgroundColor:whiteColor,
+                onTap:(value){
+                  controller.currentNavIndex.value=value;
+                }
+                ,
+              ),
+        ),
       ),
     );
 
