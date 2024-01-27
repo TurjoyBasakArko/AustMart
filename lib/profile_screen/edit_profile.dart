@@ -86,11 +86,15 @@ class EditProfile extends StatelessWidget {
 
 
                     controller.isloading(true);
+
+                    //if image is not selected
                     if(controller.profileImgPath.value.isNotEmpty){
                       await controller.uploadProfileImage();
                     }else{
                       controller.profileImageLink= data['imageUrl'];
                     }
+
+
                     //if old password match database here
                     if (data ['password']== controller.oldpassController.text){
 
@@ -103,7 +107,7 @@ class EditProfile extends StatelessWidget {
 
 
                       await controller.updateProfile(
-                        //imgUrl: controller.profileImageLink,
+                          imgUrl: controller.profileImageLink,
                           name: controller.nameController.text,
                           password: controller.newpassController.text);
                       VxToast.show(context, msg: "Updated");

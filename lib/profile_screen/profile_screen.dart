@@ -33,8 +33,8 @@ class ProfileScreen extends StatelessWidget
           builder: (BuildContext context,AsyncSnapshot<QuerySnapshot> snapshot){
             if(!snapshot.hasData){
               return const Center(
-                child:CircularProgressIndicator(valueColor: AlwaysStoppedAnimation(redColor),
-
+                child:CircularProgressIndicator(
+                  valueColor: AlwaysStoppedAnimation(redColor),
                 )
               );
             }
@@ -51,8 +51,8 @@ class ProfileScreen extends StatelessWidget
 
                         child: const Align(alignment: Alignment.topRight, child: Icon(Icons.edit, color: Colors.white)).onTap(() {
 
-                          controller.nameController.text= data['name'];
-                          //controller.passController.text= data['password'];
+                          //controller.nameController.text= data['name'];
+
 
 
                           Get.to(()=> EditProfile(data: data,)) ;

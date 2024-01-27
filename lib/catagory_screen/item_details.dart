@@ -76,14 +76,14 @@ class ItemDetails extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       VxSwiper.builder(
-                        itemCount: data['p_imgs']!.length,
+                        itemCount: data['p_imgs'].length,
                         autoPlay: true,
                         aspectRatio: 16 / 9,
                         viewportFraction: 1.0,
                         height: 300,
                         itemBuilder: (context, index) {
                           return Image.network(
-                            data['p_imgs']![index],
+                            data['p_imgs'][index],
                             width: double.infinity,
                             fit: BoxFit.cover,
                           );
@@ -94,7 +94,7 @@ class ItemDetails extends StatelessWidget {
                       10.heightBox,
                       VxRating(
                         isSelectable: false,
-                        value: double.parse(data['p_rating'].toString()), // Uncomment this line
+                        value: double.parse(data['p_rating']), // Uncomment this line
                         onRatingUpdate: (value) {},
                         normalColor: textfieldGrey,
                         selectionColor: golden,
@@ -170,11 +170,10 @@ class ItemDetails extends StatelessWidget {
               width: double.infinity,
               height: 60,
               child: TextButton(
-                style: TextButton.styleFrom(
-                  textStyle: const TextStyle(fontSize: 20,),
-                ),
+                style: TextButton.styleFrom(textStyle: const TextStyle(fontSize: 20,),),
                 onPressed: () {
                   controller.addToCart(
+                      color: data['p_colors'][controller.colorIndex.value],
                       title: data['p_name'],
                       img:data['p_imgs'][0],
                       sellername:data['p_seller'],

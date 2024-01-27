@@ -32,13 +32,14 @@ class Home extends StatelessWidget{
       CatagoryScreen(),
       CartScreen(),
       ProfileScreen(),
-
     };
+
     return WillPopScope(
       onWillPop: () async{
         showDialog(
             barrierDismissible: false,
-            context: context, builder:(context)=>exitDialoge(context));
+            context: context,
+            builder:(context)=>exitDialoge(context));
         return false;
         },
       child: Scaffold(

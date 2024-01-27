@@ -27,10 +27,10 @@ class CatagoryDetails extends StatelessWidget {
     return bgWidget(
       child: Scaffold(
         appBar: AppBar(
-          title: '$title'.text.white.make(),
+          title: title!.text.fontFamily(bold).white.make(),
         ),
         body: StreamBuilder(
-          stream: FirestoreServices.getProducts(title),
+          stream: FirestoreServices.getProducts(title!),
           builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
             if (!snapshot.hasData) {
               return Center(
@@ -115,11 +115,7 @@ class CatagoryDetails extends StatelessWidget {
                                 .onTap(() {
                               controller.checkIfFav(data[index]);
 
-                              Get.to(() => ItemDetails(
-                                title:
-                                "${data[index]['p_name']}",
-                                data: data![index],
-                              ));
+                              Get.to(() => ItemDetails(title: "${data[index]['p_name']}", data: data[index]));
                             }),
                           );
                         },
