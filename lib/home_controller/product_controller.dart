@@ -67,7 +67,21 @@ class ProductController extends GetxController {
       isFav(false);
     }
   }
-
+  calculateTotalPrice(price){
+    totalPrice.value = price * quantity.value;
+  }
+  increaseQuantity(totalQuantity)
+  {
+    if(quantity.value<totalQuantity){
+      quantity.value++;
+    }
+  }
+  decreaseQuantity()
+  {
+    if(quantity.value>0){
+      quantity.value--;
+    }
+  }
   addtoWishList(docId) async {
     await firestore.collection(productsCollection).doc(docId).set({
       'p_wishlist': FieldValue.arrayUnion([currentUser!.uid])
