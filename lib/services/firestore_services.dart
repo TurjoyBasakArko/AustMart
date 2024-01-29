@@ -18,7 +18,7 @@ class FirestoreServices {
   }
 
   // Get products based on category
-  static getProducts(String category) {
+static getProducts(String category) {
     return firestore.collection(productsCollection).where('p_category', isEqualTo: category).snapshots();
   }
 
@@ -31,5 +31,38 @@ class FirestoreServices {
   }
   static deleteDocument(docId){
     return firestore.collection(cartCollection).doc(docId).delete();
+  }
+  static searchProducts(title){
+    return firestore.collection(productsCollection).where('p_name',isLessThanOrEqualTo:title).get();
+  }
+  static allproducts(){
+    return firestore.collection(productsCollection).snapshots();
+  }
+  static getAllOrders(){
+    return firestore.collection(ordersCollection).where('order_by',isEqualTo: currentUser!.uid).snapshots();
+  }
+  static getWishLists(){
+    return firestore.collection(productsCollection).where('p-wishlist',arrayContains: currentUser!.uid).snapshots();
+  }
+  static getAllmessages()
+  {
+    return firestore.collection(chatsCollection).where('fromid',arrayContains: currentUser!.uid).snapshots();
+
+  }
+  static getCounts()async
+  {
+  var res=await Future.wait([
+    firestore.collection(cartCollection).where('add_by',isEqualTo: currentUser!.uid).get().then((value) {
+      return value.docs.length;
+    }),
+    firestore.collection(productsCollection).where('p-wishlist',arrayContains: currentUser!.uid).get().then((value) {
+      return value.docs.length;
+    }),
+    firestore.collection(ordersCollection).where('order_by',isEqualTo: currentUser!.uid).get().then((value) {
+      return value.docs.length;
+    })
+  ]);
+  return res;
+
   }
 }

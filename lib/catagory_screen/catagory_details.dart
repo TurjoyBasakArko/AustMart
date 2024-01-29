@@ -17,8 +17,9 @@ import '../widgets_common/loading_indicator.dart';
 
 class CatagoryDetails extends StatelessWidget {
   final String? title;
+  final dynamic data;
 
-  const CatagoryDetails({Key? key, this.title}) : super(key: key);
+  const CatagoryDetails({Key? key, required this.title, this.data}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +28,7 @@ class CatagoryDetails extends StatelessWidget {
     return bgWidget(
       child: Scaffold(
         appBar: AppBar(
-          title: title!.text.fontFamily(bold).white.make(),
+          title: title!.text.color(darkFontGrey).fontFamily(bold).make(),
         ),
         body: StreamBuilder(
           stream: FirestoreServices.getProducts(title!),
@@ -74,7 +75,9 @@ class CatagoryDetails extends StatelessWidget {
                         shrinkWrap: true,
                         itemCount: data.length,
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2, mainAxisExtent: 250),
+                          crossAxisCount: 2,
+                          mainAxisExtent: 250,
+                        ),
                         itemBuilder: (context, index) {
                           return SingleChildScrollView(
                             child: Column(
@@ -115,7 +118,10 @@ class CatagoryDetails extends StatelessWidget {
                                 .onTap(() {
                               controller.checkIfFav(data[index]);
 
-                              Get.to(() => ItemDetails(title: "${data[index]['p_name']}", data: data[index]));
+                              Get.to(() => ItemDetails(
+                                title: "${data[index]['p_name']}",
+                                data: data![index],
+                              ));
                             }),
                           );
                         },

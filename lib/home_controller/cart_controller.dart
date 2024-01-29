@@ -7,6 +7,7 @@ import '../consts/consts.dart';
 
 class CartController extends GetxController {
   var totalIP = 0.obs;
+  var placingOrder=false.obs;
   var paymentIndex = 0.obs;
   var addressController = TextEditingController();
   var cityController = TextEditingController();
@@ -14,6 +15,8 @@ class CartController extends GetxController {
   var postalcodeController = TextEditingController();
   var phoneController = TextEditingController();
   late dynamic productSnapshot;
+
+
   List<Map<String, dynamic>> products = [];
 
   calculate(data) {
@@ -28,6 +31,7 @@ class CartController extends GetxController {
   }
 
   placeMyOrder({required orderPaymentMethod,required totalAmount}) async {
+    placingOrder(true);
     await getProductDetails();
     await firestore.collection(ordersCollection).doc().set({
       'order_code': "233981237",
@@ -49,6 +53,7 @@ class CartController extends GetxController {
       'total_amount': totalAmount,
       'orders': FieldValue.arrayUnion(products),
     });
+    placingOrder(false);
   }
 
   getProductDetails() {
@@ -57,9 +62,17 @@ class CartController extends GetxController {
       products.add({
         'img': productSnapshot[i]['img'],
         'qty': productSnapshot[i]['qty'],
+        'tprice': productSnapshot[i]['tprice'],
+        'vendor_id': productSnapshot[i]['vendor_id'],
         'title': productSnapshot[i]['title'],
       });
     }
     print(products);
+  }
+  clearCart(){
+    for(var i=0;i<productSnapshot.length;i++)
+      {
+        firestore.collection(cartCollection).doc(productSnapshot[i].id).delete();
+      }
   }
 }

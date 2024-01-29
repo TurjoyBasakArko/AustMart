@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 class HomeController extends GetxController {
  var currentNavIndex = 0.obs;
  var username = ''.obs;
+ var searchController=TextEditingController();
 
  @override
  void onInit() {

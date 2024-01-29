@@ -1,4 +1,5 @@
 import 'package:austmart/auth_screen/SignUp.dart';
+
 import 'package:austmart/consts/list.dart';
 import 'package:austmart/home_controller/auth_controller.dart';
 import 'package:austmart/home_screen/home.dart';

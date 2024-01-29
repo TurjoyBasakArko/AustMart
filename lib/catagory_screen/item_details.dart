@@ -48,7 +48,7 @@ class ItemDetails extends StatelessWidget {
               icon: const Icon(Icons.share, color: darkFontGrey,),
             ),
             Obx(
-              ()=> IconButton(
+                  ()=> IconButton(
                 onPressed: () {
                   if (controller.isFav.value) {
                     controller.removefromWishList(data.id);
@@ -76,14 +76,14 @@ class ItemDetails extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       VxSwiper.builder(
-                        itemCount: data['p_imgs'].length,
+                        itemCount: data['p_imgs']!.length,
                         autoPlay: true,
                         aspectRatio: 16 / 9,
                         viewportFraction: 1.0,
                         height: 300,
                         itemBuilder: (context, index) {
                           return Image.network(
-                            data['p_imgs'][index],
+                            data['p_imgs']![index],
                             width: double.infinity,
                             fit: BoxFit.cover,
                           );
@@ -92,7 +92,16 @@ class ItemDetails extends StatelessWidget {
                       10.heightBox,
                       title!.text.color(darkFontGrey).size(18).fontFamily(bold).make(),
                       10.heightBox,
-
+                      VxRating(
+                        isSelectable: false,
+                        value: double.parse(data['p_rating'].toString()), // Uncomment this line
+                        onRatingUpdate: (value) {},
+                        normalColor: textfieldGrey,
+                        selectionColor: golden,
+                        count: 5,
+                        maxRating: 5,
+                        size: 25,
+                      ),
                       10.heightBox,
                       "${data['p_price']}".numCurrency.text.fontFamily(semibold).size(18).color(Colors.red).make(),
                       20.heightBox,
@@ -122,25 +131,21 @@ class ItemDetails extends StatelessWidget {
                         children: [
                           Row(
                             children: [
-                              SizedBox(
-                                width: 100,
-                                child: "Quantity: ".text.size(18).color(darkFontGrey).make(),
-                              ),
+
                               Obx(()=>
                                   Row(
                                     children: [
                                       IconButton(onPressed: () {
                                         controller.decreaseQuantity();
-                                        controller.calculateTotalPrice(int.parse(data['p_price']));
+                                        controller.caculateTotalPrice(int.parse(data['p_price']));
                                       }, icon: Icon(Icons.remove),),
                                       controller.quantity.value.text.color(darkFontGrey).fontFamily(bold).make(),
-
                                       IconButton(onPressed: () {
                                         controller.increaseQuantity(int.parse(data['p_quantity']));
-                                        controller.calculateTotalPrice(int.parse(data['p_price']));
+                                        controller.caculateTotalPrice(int.parse(data['p_price']));
                                       }, icon: Icon(Icons.add)),
                                       10.widthBox,
-                                      "(${data['p_quantity']} available)".text.color(darkFontGrey).fontFamily(semibold).make(),
+                                      "(${data['p_quatity']}available)".text.color(darkFontGrey).fontFamily(semibold).make(),
                                     ],
                                   ),
                               ),
@@ -152,13 +157,13 @@ class ItemDetails extends StatelessWidget {
                                 width: 100,
                                 child: "Total :".text.color(darkFontGrey).fontFamily(semibold).make(),
                               ),
-                              "${controller.totalPrice.value}".numCurrency.text.color(Colors.red).fontFamily(bold).size(18).make(),
+                              "${controller.totalPrice.value}".text.color(Colors.red).fontFamily(bold).size(18).make(),
                             ],
                           ).box.padding(EdgeInsets.all(8)).make(),
                         ],
                       ).box.white.shadowSm.make(),
                       10.heightBox,
-                      "Description: ${data['p_desc']}".text.color(darkFontGrey).size(18).make(),
+                      "(${data['p_desc']} ".text.color(darkFontGrey).size(18).make(),
                     ],
                   ),
                 ),
@@ -168,17 +173,29 @@ class ItemDetails extends StatelessWidget {
               width: double.infinity,
               height: 60,
               child: TextButton(
-                style: TextButton.styleFrom(textStyle: const TextStyle(fontSize: 20,),),
+                style: TextButton.styleFrom(
+                  textStyle: const TextStyle(fontSize: 20,),
+                ),
                 onPressed: () {
-                  controller.addToCart(
-                      color: data['p_colors'][controller.colorIndex.value],
-                      title: data['p_name'],
-                      img:data['p_imgs'][0],
-                      sellername:data['p_seller'],
-                      qty: controller.quantity.value,
-                      tprice: controller.totalPrice.value,
-                      context: context);
-                  VxToast.show(context,msg:"Added to cart");
+                  if(controller.quantity.value>0)
+                    {
+                      controller.addToCart(
+                        title: data['p_name'],
+                        img:data['p_imgs'][0],
+                        sellername:data['p_seller'],
+                        qty: controller.quantity.value,
+                        tprice:controller.totalPrice.value,
+                        context: context,
+                        vendorID: data['vendor_id'],
+
+                      );
+                      VxToast.show(context,msg:"Added to cart");
+                    }
+                  else {
+                    VxToast.show(context,msg:"Minimun 1 product is required");
+
+                  }
+
                 },
                 child: const Text('Add to Cart', style: TextStyle(color: Colors.white),),
               ),

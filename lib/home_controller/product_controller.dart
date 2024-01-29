@@ -1,5 +1,5 @@
-//import 'dart:html';
-//import 'dart:js';
+import 'dart:html';
+import 'dart:js';
 
 import 'package:austmart/consts/consts.dart';
 import 'package:austmart/models/category_model.dart';
@@ -11,12 +11,11 @@ import '../consts/firebase_consts.dart';
 
 class ProductController extends GetxController {
   var quantity = 0.obs;
-  var colorIndex = 0.obs;
   var totalPrice = 0.obs;
   var subcat = [];
   var isFav = false.obs;
 
-  Future<void> getSubCategories(title) async {
+ getSubCategories(title) async {
     subcat.clear();
 
     var data = await rootBundle.loadString("lib/services/category_model.json");
@@ -29,14 +28,14 @@ class ProductController extends GetxController {
     }
   }
 
-  Future<void> addToCart({
-    color,
-    required String title,
-    required String img,
-    required String sellername,
-    required int qty,
-    required int tprice,
-    required BuildContext context,
+addToCart({
+     title,
+     img,
+     sellername,
+     qty,
+     tprice,
+     context,
+     vendorID
   }) async {
     try {
       await firestore.collection(cartCollection).doc().set({
@@ -44,6 +43,7 @@ class ProductController extends GetxController {
         'img': img,
         'sellername': sellername,
         'qty': qty,
+        'vendor_id':vendorID,
         'tprice': tprice,
         'added_by': currentUser!.uid,
       });
@@ -53,11 +53,25 @@ class ProductController extends GetxController {
           snackPosition: SnackPosition.BOTTOM);
     }
   }
+  increaseQuantity(totalQuatity)
+  {
+    if(quantity.value<totalQuatity)
+      {
+        quantity.value++;
+      }
 
+  }
+  decreaseQuantity()
+  {
+    if(quantity.value>0)
+      {
+        quantity.value--;
+      }
+
+  }
   resetValues() {
     totalPrice.value = 0;
     quantity.value = 0;
-    colorIndex.value = 0;
   }
 
   checkIfFav(data) async {
@@ -67,21 +81,7 @@ class ProductController extends GetxController {
       isFav(false);
     }
   }
-  calculateTotalPrice(price){
-    totalPrice.value = price * quantity.value;
-  }
-  increaseQuantity(totalQuantity)
-  {
-    if(quantity.value<totalQuantity){
-      quantity.value++;
-    }
-  }
-  decreaseQuantity()
-  {
-    if(quantity.value>0){
-      quantity.value--;
-    }
-  }
+
   addtoWishList(docId) async {
     await firestore.collection(productsCollection).doc(docId).set({
       'p_wishlist': FieldValue.arrayUnion([currentUser!.uid])
@@ -100,5 +100,9 @@ class ProductController extends GetxController {
     // Show a success message using Get.snackbar
     Get.snackbar('Wishlist', 'Removed from favourites',
         snackPosition: SnackPosition.BOTTOM);
+  }
+  caculateTotalPrice(price)
+  {
+    totalPrice.value=price*quantity.value;
   }
 }
