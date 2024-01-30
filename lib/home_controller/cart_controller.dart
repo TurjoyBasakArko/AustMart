@@ -61,6 +61,8 @@ class CartController extends GetxController {
     for (var i = 0; i < productSnapshot.length; i++) {
       products.add({
         'img': productSnapshot[i]['img'],
+        'vendor_id':productSnapshot[i]['vendor_id'],
+        'tprice' : productSnapshot[i]['tprice'],
         'qty': productSnapshot[i]['qty'],
         'tprice': productSnapshot[i]['tprice'],
         'vendor_id': productSnapshot[i]['vendor_id'],

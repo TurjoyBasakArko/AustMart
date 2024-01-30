@@ -76,25 +76,7 @@ class LoginScreen extends StatelessWidget {
                         }
                     ).box.width(context.screenWidth - 50).make(),
                     SizedBox(height: 10),
-                    loginWith.text.color(fontGrey).make(),
-                    SizedBox(height: 5),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: List.generate(
-                        3,
-                            (index) => Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: CircleAvatar(
-                            backgroundColor: lightGrey,
-                            radius: 25,
-                            child: Image.asset(
-                              socialIconList[index],
-                              width: 30,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
+
                 
                 
                 

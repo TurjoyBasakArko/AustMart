@@ -112,7 +112,7 @@ class ItemDetails extends StatelessWidget {
                               children: [
                                 "Seller".text.color(darkFontGrey).size(16).align(TextAlign.center).make(),
                                 5.heightBox,
-                                "abc user".text.color(darkFontGrey).fontFamily(bold).size(18).align(TextAlign.center).make(),
+                                "${data['p_seller']} ".text.color(darkFontGrey).fontFamily(bold).size(18).align(TextAlign.center).make(),
                               ],
                             ),
                           ),
@@ -121,7 +121,7 @@ class ItemDetails extends StatelessWidget {
                             child: Icon(Icons.message_rounded, color: darkFontGrey,),
                           ).onTap(() {
                             Get.to(() => const ChatScreen(),
-                              arguments: [data['p_seller'], data['vender_id']],
+                              arguments: [data['p_seller'], data['vendor_id']],
                             );
                           }),
                         ],
@@ -137,15 +137,15 @@ class ItemDetails extends StatelessWidget {
                                     children: [
                                       IconButton(onPressed: () {
                                         controller.decreaseQuantity();
-                                        controller.caculateTotalPrice(int.parse(data['p_price']));
+                                        controller.calculateTotalPrice(int.parse(data['p_price']));
                                       }, icon: Icon(Icons.remove),),
                                       controller.quantity.value.text.color(darkFontGrey).fontFamily(bold).make(),
                                       IconButton(onPressed: () {
                                         controller.increaseQuantity(int.parse(data['p_quantity']));
-                                        controller.caculateTotalPrice(int.parse(data['p_price']));
+                                        controller.calculateTotalPrice(int.parse(data['p_price']));
                                       }, icon: Icon(Icons.add)),
                                       10.widthBox,
-                                      "(${data['p_quatity']}available)".text.color(darkFontGrey).fontFamily(semibold).make(),
+                                      "(${data['p_quantity']}available)".text.color(darkFontGrey).fontFamily(semibold).make(),
                                     ],
                                   ),
                               ),
@@ -157,13 +157,13 @@ class ItemDetails extends StatelessWidget {
                                 width: 100,
                                 child: "Total :".text.color(darkFontGrey).fontFamily(semibold).make(),
                               ),
-                              "${controller.totalPrice.value}".text.color(Colors.red).fontFamily(bold).size(18).make(),
+                              controller.totalPrice.value.numCurrency.text.color(Colors.red).fontFamily(bold).size(18).make(),
                             ],
                           ).box.padding(EdgeInsets.all(8)).make(),
                         ],
                       ).box.white.shadowSm.make(),
                       10.heightBox,
-                      "(${data['p_desc']} ".text.color(darkFontGrey).size(18).make(),
+                      "${data['p_desc']} ".text.color(darkFontGrey).size(18).make(),
                     ],
                   ),
                 ),
