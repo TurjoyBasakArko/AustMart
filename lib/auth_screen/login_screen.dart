@@ -1,4 +1,5 @@
 import 'package:austmart/auth_screen/SignUp.dart';
+import 'package:austmart/auth_screen/forgetPass.dart';
 
 import 'package:austmart/consts/list.dart';
 import 'package:austmart/home_controller/auth_controller.dart';
@@ -42,7 +43,15 @@ class LoginScreen extends StatelessWidget {
                   children: [
                     customTextField(hint: emailHint, title: email, isPass: false, controller: controller.emailController),
                     customTextField(hint: passwordHint, title: password, isPass: true, controller: controller.passwordController),
-                    Align(alignment: Alignment.centerRight, child: TextButton(onPressed: () {}, child: forgetPass.text.make(),)),
+                    Align(alignment: Alignment.centerRight, child: TextButton(onPressed: () {
+                       Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return Forgetpasswordpage();
+                              },
+                            ),);
+                    }, child: forgetPass.text.make(),)),
                     5.heightBox,
 
                     controller.isloading.value ?

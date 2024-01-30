@@ -65,28 +65,7 @@ class HomeScreen extends StatelessWidget {
               ).box.outerShadowSm.make(),
             ),
             10.heightBox,
-            Expanded(
-              child: SingleChildScrollView(
-                physics: const BouncingScrollPhysics(),
-                child: Column(
-                  children: [
-                    VxSwiper.builder(
-                      aspectRatio: 16 / 9,
-                      autoPlay: true,
-                      height: 150,
-                      enlargeCenterPage: true,
-                      itemCount: sliderList.length,
-                      itemBuilder: (context, index) {
-                        return Image.asset(
-                          sliderList[index],
-                          fit: BoxFit.fill,
-                        ).box
-                            .rounded
-                            .clip(Clip.antiAlias)
-                            .margin(const EdgeInsets.symmetric(horizontal: 8))
-                            .make();
-                      },
-                    ),
+
                     10.heightBox,
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -101,6 +80,11 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                     10.heightBox,
+            Expanded(
+              child: SingleChildScrollView(
+                physics: const BouncingScrollPhysics(),
+                child: Column(
+                  children: [
                     VxSwiper.builder(
                       aspectRatio: 16 / 9,
                       autoPlay: true,
@@ -214,7 +198,7 @@ class HomeScreen extends StatelessWidget {
                                       fit: BoxFit.cover,
                                     ),
                                     10.heightBox,
-                                    "Laptop 4GB/64GB".text.fontFamily(semibold).color(darkFontGrey).make(),
+                                    "Books".text.fontFamily(semibold).color(darkFontGrey).make(),
                                     10.heightBox,
                                     "ট600".text.color(redColor).fontFamily(bold).size(16).make(),
                                   ],
@@ -227,23 +211,7 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                     20.heightBox,
-                    VxSwiper.builder(
-                      aspectRatio: 16 / 9,
-                      autoPlay: true,
-                      height: 150,
-                      enlargeCenterPage: true,
-                      itemCount: secondsliderList.length,
-                      itemBuilder: (context, index) {
-                        return Image.asset(
-                          secondsliderList[index],
-                          fit: BoxFit.fill,
-                        ).box
-                            .rounded
-                            .clip(Clip.antiAlias)
-                            .margin(const EdgeInsets.symmetric(horizontal: 8))
-                            .make();
-                      },
-                    ),
+
                     20.heightBox,
                     StreamBuilder(
                       stream: FirestoreServices.allproducts(),
@@ -285,9 +253,8 @@ class HomeScreen extends StatelessWidget {
                               ).box.white.margin(const EdgeInsets.symmetric(horizontal: 4)).rounded.padding(const EdgeInsets.all(8)).make().onTap(() {
                                 Get.to(()=>ItemDetails(
                                   title: "${allproductsdata[index]['p_name']}",
-                                  data: allproductsdata[index],
-
-                                    ));
+                                  data: allproductsdata![index],
+                                ));
                               });
                             },
                           );
