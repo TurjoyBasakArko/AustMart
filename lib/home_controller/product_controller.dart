@@ -1,5 +1,5 @@
-import 'dart:html';
-import 'dart:js';
+//import 'dart:html';
+//import 'dart:js';
 
 import 'package:austmart/consts/consts.dart';
 import 'package:austmart/models/category_model.dart';
@@ -101,8 +101,8 @@ addToCart({
     Get.snackbar('Wishlist', 'Removed from favourites',
         snackPosition: SnackPosition.BOTTOM);
   }
-  caculateTotalPrice(price)
+  calculateTotalPrice(price)
   {
-    totalPrice.value=price*quantity.value;
+    totalPrice.value = price * quantity.value;
   }
 }

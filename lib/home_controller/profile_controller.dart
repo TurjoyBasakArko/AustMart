@@ -66,6 +66,7 @@ class ProfileController extends GetxController{
    });
 
    }
+
 }
 
 
