@@ -76,7 +76,7 @@ class LoginScreen extends StatelessWidget {
                         }
                     ).box.width(context.screenWidth - 50).make(),
                     SizedBox(height: 10),
-<<<<<<< HEAD
+
                     loginWith.text.color(fontGrey).make(),
                     SizedBox(height: 5),
                     Row(
@@ -96,9 +96,7 @@ class LoginScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-=======
 
->>>>>>> f5069cd71135300e854a6a263e87c7242b1f0337
                 
                 
                 
