@@ -33,7 +33,7 @@ static getProducts(String category) {
     return firestore.collection(cartCollection).doc(docId).delete();
   }
   static searchProducts(title){
-<<<<<<< HEAD
+
     return firestore.collection(productsCollection).get();
   }
 
@@ -41,10 +41,7 @@ static getProducts(String category) {
     return firestore.collection(productsCollection).where('p_subcategory', isEqualTo: title).snapshots();
   }
 
-=======
-    return firestore.collection(productsCollection).where('p_name',isLessThanOrEqualTo:title).get();
-  }
->>>>>>> f5069cd71135300e854a6a263e87c7242b1f0337
+
   static allproducts(){
     return firestore.collection(productsCollection).snapshots();
   }
@@ -75,7 +72,7 @@ static getProducts(String category) {
   return res;
 
   }
-<<<<<<< HEAD
+
 
   //get featured products method
   static getFreaturedProducts(){
@@ -84,6 +81,5 @@ static getProducts(String category) {
 
 
 
-=======
->>>>>>> f5069cd71135300e854a6a263e87c7242b1f0337
+
 }

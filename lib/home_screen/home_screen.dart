@@ -11,15 +11,13 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:velocity_x/velocity_x.dart';
-
+import 'package:austmart/catagory_screen/item_details.dart';
+import 'package:flutter/src/widgets/basic.dart';
 import '../consts/list.dart';
 import '../widgets_common/home_buttons.dart';
 
 class HomeScreen extends StatelessWidget {
-<<<<<<< HEAD
 
-=======
->>>>>>> f5069cd71135300e854a6a263e87c7242b1f0337
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
@@ -44,17 +42,11 @@ class HomeScreen extends StatelessWidget {
                   border: InputBorder.none,
                   suffixIcon: Icon(Icons.search).onTap(() {
                     if (controller.searchController.text.isNotEmptyAndNotNull) {
-<<<<<<< HEAD
+
                       Get.to(() => SearchScreen(
                         title: controller.searchController.text,
                         ));
-=======
-                      Get.to(
-                            () => SearchScreen(
-                          title: controller.searchController.text,
-                        ),
-                      );
->>>>>>> f5069cd71135300e854a6a263e87c7242b1f0337
+
                     }
                   }),
                   filled: true,
@@ -115,15 +107,13 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-<<<<<<< HEAD
+
 
                     //featured products
 
                     20.heightBox,
 
-=======
-                    20.heightBox,
->>>>>>> f5069cd71135300e854a6a263e87c7242b1f0337
+
                     Container(
                       padding: const EdgeInsets.all(12),
                       width: double.infinity,
@@ -135,7 +125,7 @@ class HomeScreen extends StatelessWidget {
                           10.heightBox,
                           SingleChildScrollView(
                             scrollDirection: Axis.horizontal,
-<<<<<<< HEAD
+
 
                             child: FutureBuilder(
                               future: FirestoreServices.getFreaturedProducts(),
@@ -185,26 +175,6 @@ class HomeScreen extends StatelessWidget {
                                   );
                                 }
                               }
-=======
-                            child: Row(
-                              children: List.generate(
-                                imgfeatureproduct.length,
-                                    (index) => Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Image.asset(
-                                      imgfeatureproduct[index],
-                                      width: 150,
-                                      fit: BoxFit.cover,
-                                    ),
-                                    10.heightBox,
-                                    "Books".text.fontFamily(semibold).color(darkFontGrey).make(),
-                                    10.heightBox,
-                                    "ট600".text.color(redColor).fontFamily(bold).size(16).make(),
-                                  ],
-                                ).box.white.margin(const EdgeInsets.symmetric(horizontal: 4)).rounded.padding(const EdgeInsets.all(8)).make(),
-                              ),
->>>>>>> f5069cd71135300e854a6a263e87c7242b1f0337
                             ),
                           ),
                         ],
@@ -243,11 +213,9 @@ class HomeScreen extends StatelessWidget {
                                   const Spacer(),
                                   "${allproductsdata[index]['p_name']}".text.fontFamily(semibold).color(darkFontGrey).make(),
                                   10.heightBox,
-<<<<<<< HEAD
+
                                   "${allproductsdata[index]['p_price']}".text.color(redColor).fontFamily(bold).size(16).make(),
-=======
-                                  "${allproductsdata[index]['p_name']}".text.color(redColor).fontFamily(bold).size(16).make(),
->>>>>>> f5069cd71135300e854a6a263e87c7242b1f0337
+
                                   10.heightBox,
                                 ],
                               ).box.white.margin(const EdgeInsets.symmetric(horizontal: 4)).rounded.padding(const EdgeInsets.all(8)).make().onTap(() {

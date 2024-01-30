@@ -1,10 +1,7 @@
-<<<<<<< HEAD
+
 import 'dart:html';
 import 'dart:js';
-=======
-//import 'dart:html';
-//import 'dart:js';
->>>>>>> f5069cd71135300e854a6a263e87c7242b1f0337
+
 
 import 'package:austmart/consts/consts.dart';
 import 'package:austmart/models/category_model.dart';
@@ -75,6 +72,7 @@ addToCart({
 
   }
   resetValues() {
+    var totalPrice;
     totalPrice.value = 0;
     quantity.value = 0;
   }
@@ -106,14 +104,10 @@ addToCart({
     Get.snackbar('Wishlist', 'Removed from favourites',
         snackPosition: SnackPosition.BOTTOM);
   }
-<<<<<<< HEAD
+
   caculateTotalPrice(price)
   {
     totalPrice.value=price*quantity.value;
-=======
-  calculateTotalPrice(price)
-  {
-    totalPrice.value = price * quantity.value;
->>>>>>> f5069cd71135300e854a6a263e87c7242b1f0337
+
   }
 }
