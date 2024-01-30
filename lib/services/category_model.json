@@ -1,0 +1,32 @@
+{
+  "categories": [
+    {
+      "name": "bookx",
+      "subcategory": ["cse", "cse", "cse", "cse", "cse", "cse", "cse"]
+    },
+    {
+      "name": "material 1",
+      "subcategory": ["cse", "cse", "cse", "cse", "cse", "cse", "cse"]
+    },
+    {
+      "name": "material 2",
+      "subcategory": ["cse", "cse", "cse", "cse", "cse", "cse", "cse"]
+    },
+    {
+      "name": "material 3",
+      "subcategory": ["cse", "cse", "cse", "cse", "cse", "cse", "cse"]
+    },
+    {
+      "name": "material 4",
+      "subcategory": ["cse", "cse", "cse", "cse", "cse", "cse", "cse"]
+    },
+    {
+      "name": "material 5",
+      "subcategory": ["cse", "cse", "cse", "cse", "cse", "cse", "cse"]
+    },
+    {
+      "name": "material 6",
+      "subcategory": ["cse", "cse", "cse", "cse", "cse", "cse", "cse"]
+    }
+  ]
+}
