@@ -22,7 +22,11 @@ class ItemDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
     var controller = Get.put(ProductController());
+=======
+    var controller = Get.find<ProductController>();
+>>>>>>> f5069cd71135300e854a6a263e87c7242b1f0337
 
     return WillPopScope(
       onWillPop: () async {
@@ -68,6 +72,7 @@ class ItemDetails extends StatelessWidget {
         ),
         body: Column(
           children: [
+<<<<<<< HEAD
             Expanded(
               child: Padding(
                 padding: EdgeInsets.all(8),
@@ -206,3 +211,133 @@ class ItemDetails extends StatelessWidget {
     );
   }
 }
+=======
+        Expanded(
+        child: Padding(
+        padding: EdgeInsets.all(8),
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                VxSwiper.builder(
+                  itemCount: data['p_imgs']!.length,
+                  autoPlay: true,
+                  aspectRatio: 16 / 9,
+                  viewportFraction: 1.0,
+                  height: 300,
+                  itemBuilder: (context, index) {
+                    return Image.network(
+                      data['p_imgs']![index],
+                      width: double.infinity,
+                      fit: BoxFit.cover,
+                    );
+                  },
+                ),
+                10.heightBox,
+                title!.text.color(darkFontGrey).size(18).fontFamily(bold).make(),
+                10.heightBox,
+                "${data['p_price']}".numCurrency.text.fontFamily(semibold).size(18).color(Colors.red).make(),
+                20.heightBox,
+                Row(
+                  children: [
+                    Expanded(
+                      child: Column(
+                        children: [
+                          "Seller".text.color(darkFontGrey).size(16).align(TextAlign.center).make(),
+                          5.heightBox,
+                          "${data['p_seller']}".text.color(darkFontGrey).fontFamily(bold).size(18).align(TextAlign.center).make(),
+                        ],
+                      ),
+                    ),
+                    CircleAvatar(
+                      backgroundColor: Colors.white,
+                      child: Icon(Icons.message_rounded, color: darkFontGrey,),
+                    ).onTap(() {
+                      Get.to(() => const ChatScreen(),
+                        arguments: [data['p_seller'], data['vendor_id']],
+                      );
+                    }),
+                  ],
+                ).box.height(70).padding(EdgeInsets.symmetric(horizontal: 16)).color(textfieldGrey).make(),
+                20.heightBox,
+                "Quantity :".text.fontFamily(semibold).size(17).make(),
+                Column(
+                  children: [
+                    Row(
+                      children: [
+
+                        Obx(()=>
+                            Row(
+                              children: [
+                                IconButton(onPressed: () {
+                                  controller.decreaseQuantity();
+                                  controller.calculateTotalPrice(int.parse(data['p_price']));
+                                }, icon: Icon(Icons.remove),),
+                                controller.quantity.value.text.color(darkFontGrey).fontFamily(bold).make(),
+                                IconButton(onPressed: () {
+                                  controller.increaseQuantity(int.parse(data['p_quantity']));
+                                  controller.calculateTotalPrice(int.parse(data['p_price']));
+                                }, icon: Icon(Icons.add)),
+                                10.widthBox,
+                                "(${data['p_quantity']}available)".text.color(darkFontGrey).fontFamily(semibold).make(),
+                              ],
+                            ),
+                        ),
+                      ],
+                    ).box.padding(EdgeInsets.all(8)).make(),
+                    Row(
+                      children: [
+                        SizedBox(
+                          width: 100,
+                          child: "Total :".text.color(darkFontGrey).fontFamily(semibold).size(17).make(),
+                        ),
+                        controller.totalPrice.value.text.color(Colors.red).fontFamily(bold).size(18).make(),
+                      ],
+                    ).box.padding(EdgeInsets.all(8)).make(),
+                  ],
+                ).box.white.shadowSm.make(),
+                10.heightBox,
+                "${data['p_desc']} ".text.color(darkFontGrey).size(18).make(),
+              ],
+            ),
+          ),
+        ),
+      ),
+      SizedBox(
+        width: double.infinity,
+        height: 60,
+        child: TextButton(
+          style: TextButton.styleFrom(
+            textStyle: const TextStyle(fontSize: 20,),
+          ),
+          onPressed: () {
+            if(controller.quantity.value>0)
+            {
+              controller.addToCart(
+                title: data['p_name'],
+                img:data['p_imgs'][0],
+                sellername:data['p_seller'],
+                qty: controller.quantity.value,
+                tprice:controller.totalPrice.value,
+                context: context,
+                vendorID: data['vendor_id'],
+
+              );
+              VxToast.show(context,msg:"Added to cart");
+            }
+            else {
+              VxToast.show(context,msg:"Minimun 1 product is required");
+
+            }
+
+          },
+          child: const Text('Add to Cart', style: TextStyle(color: Colors.white),),
+        ),
+      ).backgroundColor(Colors.redAccent),
+      ],
+    ),
+    ),
+    );
+  }
+}
+>>>>>>> f5069cd71135300e854a6a263e87c7242b1f0337

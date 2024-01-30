@@ -34,7 +34,11 @@ const featurecatagories="Faetured Catagories";
 const topCategories="top catagories";
 const brand="brand";
 const wishlist="My Wishlists", orders="My Orders",messages= "Messeges",newpass="New Password",oldpass="Old Password";
+<<<<<<< HEAD
 const featuredproduct="Featured Product";
+=======
+const featuredproduct="featuredproduct";
+>>>>>>> f5069cd71135300e854a6a263e87c7242b1f0337
 //catagory strings
 const books= "Books";
 const    labMaterials="Lab Materials";

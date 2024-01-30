@@ -268,10 +268,17 @@ packages:
     dependency: transitive
     description:
       name: http
+<<<<<<< HEAD
       sha256: d4872660c46d929f6b8a9ef4e7a7eff7e49bbf0c4ec3f385ee32df5119175139
       url: "https://pub.dev"
     source: hosted
     version: "1.1.2"
+=======
+      sha256: a2bbf9d017fcced29139daa8ed2bba4ece450ab222871df93ca9eec6f80c34ba
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.2.0"
+>>>>>>> f5069cd71135300e854a6a263e87c7242b1f0337
   http_parser:
     dependency: transitive
     description:
@@ -396,10 +403,17 @@ packages:
     dependency: transitive
     description:
       name: mime
+<<<<<<< HEAD
       sha256: e4ff8e8564c03f255408decd16e7899da1733852a9110a58fe6d1b817684a63e
       url: "https://pub.dev"
     source: hosted
     version: "1.0.4"
+=======
+      sha256: "2e123074287cc9fd6c09de8336dae606d1ddb88d9ac47358826db698c176a1f2"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.5"
+>>>>>>> f5069cd71135300e854a6a263e87c7242b1f0337
   nested:
     dependency: transitive
     description:
